@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Target, TrendingUp, Users, Globe, Zap, CheckCircle, Star, ArrowUp, Eye, Clock, BarChart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Quiz } from "@/components/Quiz";
 
 const BlogArticle4 = () => {
   return (
@@ -699,6 +700,70 @@ const BlogArticle4 = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Quiz Section */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground">Testirajte svoje SEO znanje</h2>
+              <Quiz
+                questions={[
+                  {
+                    question: "Koliko korisnika nikad ne pogleda drugu stranu Google rezultata?",
+                    options: [
+                      "65%",
+                      "70%",
+                      "75%",
+                      "80%"
+                    ],
+                    correct: 2,
+                    explanation: "75% korisnika nikad ne pogleda drugu stranu Google rezultata, što znači da ako vaš sajt nije među prva 10 rezultata, praktično ste nevidljivi za potencijalne klijente."
+                  },
+                  {
+                    question: "Šta je 'mobile-first indexing'?",
+                    options: [
+                      "Google favorizuje mobilne aplikacije",
+                      "Google prvo analizira mobilnu verziju sajta",
+                      "Google rangira samo responsive sajtove",
+                      "Google prikazuje rezultate samo na mobilnim"
+                    ],
+                    correct: 1,
+                    explanation: "Mobile-first indexing znači da Google najpre analizira mobilnu verziju vašeg sajta za indeksiranje i rangiranje. Ovo je u upotrebi od 2018. godine."
+                  },
+                  {
+                    question: "Koliko sekundi je maksimalno prihvatljivo vreme učitavanja sajta?",
+                    options: [
+                      "2 sekunde",
+                      "3 sekunde",
+                      "5 sekundi",
+                      "7 sekundi"
+                    ],
+                    correct: 1,
+                    explanation: "Sajt koji se učitava brže od 3 sekunde ima značajno bolju šansu za visoko rangiranje. 40% korisnika napušta sajt ako se učitava duže od 3 sekunde."
+                  },
+                  {
+                    question: "Koliki prosečni ROI može imati SEO optimizacija?",
+                    options: [
+                      "1,500%",
+                      "2,000%",
+                      "2,500%",
+                      "3,000%"
+                    ],
+                    correct: 2,
+                    explanation: "SEO optimizacija može imati prosečni ROI od 2,500%, što je značajno više od većine drugih marketing strategija, jer generiše dugoročan besplatan saobraćaj."
+                  },
+                  {
+                    question: "Koliko faktora koristi Google algoritam za rangiranje sajtova?",
+                    options: [
+                      "Preko 100",
+                      "Preko 150",
+                      "Preko 200",
+                      "Preko 250"
+                    ],
+                    correct: 2,
+                    explanation: "Google algoritam koristi preko 200 različitih faktora za rangiranje sajtova, uključujući tehničke elemente, kvalitet sadržaja, korisničko iskustvo i autoritet sajta."
+                  }
+                ]}
+              />
+            </div>
 
             {/* Conclusion */}
             <div className="space-y-6">

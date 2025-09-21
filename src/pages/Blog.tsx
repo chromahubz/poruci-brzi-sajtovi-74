@@ -14,7 +14,7 @@ const Blog = () => {
       date: "15. januar 2025",
       category: "Izrada sajtova",
       readTime: "8 min",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Blog = () => {
       date: "12. januar 2025",
       category: "Domeni",
       readTime: "6 min",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const Blog = () => {
       date: "10. januar 2025",
       category: "Web dizajn",
       readTime: "5 min",
-      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ const Blog = () => {
       date: "8. januar 2025",
       category: "SEO",
       readTime: "7 min",
-      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const Blog = () => {
       date: "5. januar 2025",
       category: "Optimizacija",
       readTime: "6 min",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 6,
@@ -64,7 +64,7 @@ const Blog = () => {
       date: "3. januar 2025",
       category: "E-commerce",
       readTime: "10 min",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 7,
@@ -74,7 +74,7 @@ const Blog = () => {
       date: "20. januar 2025",
       category: "Social Media",
       readTime: "15 min",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 8,
@@ -84,7 +84,7 @@ const Blog = () => {
       date: "22. januar 2025",
       category: "Lokalni SEO",
       readTime: "12 min",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 9,
@@ -94,7 +94,7 @@ const Blog = () => {
       date: "25. januar 2025",
       category: "Budget Marketing",
       readTime: "14 min",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 10,
@@ -104,7 +104,17 @@ const Blog = () => {
       date: "28. januar 2025",
       category: "Content Marketing",
       readTime: "12 min",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 11,
+      title: "Landing stranica koja prodaje - Kako napraviti stranu koja konvertuje posetioce u kupce",
+      excerpt: "Kompletni vodič kroz kreiranje visoko-konvertirajućih landing stranica. Naučite kako da svaki posetilac postane potencijalni kupac.",
+      author: "Poruči Sajt Tim",
+      date: "25. januar 2025",
+      category: "Conversion Optimization",
+      readTime: "16 min",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     }
   ];
 

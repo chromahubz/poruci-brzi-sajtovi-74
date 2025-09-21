@@ -54,7 +54,7 @@ const BlogArticle2 = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="aspect-video bg-secondary rounded-lg overflow-hidden mb-12">
             <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop&crop=entropy&auto=format&q=80"
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop&crop=entropy&auto=format&q=60"
               alt="Odabir najboljih domena za biznis sajt"
               className="w-full h-full object-cover"
             />

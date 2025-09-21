@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingCart, Target, TrendingUp, Users, Globe, CheckCircle, Star, Clock, Eye, BarChart, CreditCard, Package, Smartphone, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Quiz } from "@/components/Quiz";
 
 const BlogArticle6 = () => {
   return (
@@ -681,6 +682,70 @@ const BlogArticle6 = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Quiz Section */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground">Testirajte svoje znanje o e-commerce biznu</h2>
+              <Quiz
+                questions={[
+                  {
+                    question: "Za koliko procenata je naraslo e-commerce tržište u Srbiji u poslednje tri godine?",
+                    options: [
+                      "30%",
+                      "35%",
+                      "40%",
+                      "45%"
+                    ],
+                    correct: 2,
+                    explanation: "E-commerce tržište u Srbiji je naraslo za preko 40% u poslednje tri godine, što jasno pokazuje ogroman potencijal ovog sektora za budući rast."
+                  },
+                  {
+                    question: "Koja je prosečna konverzija e-commerce sajtova?",
+                    options: [
+                      "1.86%",
+                      "2.86%",
+                      "3.86%",
+                      "4.86%"
+                    ],
+                    correct: 1,
+                    explanation: "Prosečna konverzija e-commerce sajta je samo 2.86%, što znači da od 100 posetilaca, samo 3 će kupiti nešto. Najbolji sajtovi postižu 10-15% konverziju."
+                  },
+                  {
+                    question: "Koliko posto online kupovina se dešava na mobilnim uređajima?",
+                    options: [
+                      "68%",
+                      "70%",
+                      "72%",
+                      "74%"
+                    ],
+                    correct: 2,
+                    explanation: "72% online kupovina se dešava na mobilnim uređajima, što naglašava kritičnost mobilne optimizacije za e-commerce uspeh."
+                  },
+                  {
+                    question: "Koja je preporučena minimum marža za e-commerce proizvode?",
+                    options: [
+                      "30%",
+                      "40%",
+                      "50%",
+                      "60%"
+                    ],
+                    correct: 2,
+                    explanation: "Preporučena marža za e-commerce proizvode je preko 50%. Ovo omogućava pokrivanje marketing troškova, operativnih troškova i još uvek ostvariti profit."
+                  },
+                  {
+                    question: "Koja platforma je najbolja za početnike u e-commerce-u?",
+                    options: [
+                      "WooCommerce",
+                      "Magento",
+                      "Shopify",
+                      "PrestaShop"
+                    ],
+                    correct: 2,
+                    explanation: "Shopify je najbolja platforma za početnike jer je jednostavna za pokretanje, ne zahteva tehničko znanje, a ima odličnu podršku i hosting uključen u cenu."
+                  }
+                ]}
+              />
+            </div>
 
             {/* Conclusion */}
             <div className="space-y-6">

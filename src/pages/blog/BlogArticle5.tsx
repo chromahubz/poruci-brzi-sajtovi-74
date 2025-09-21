@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, TrendingUp, Users, Globe, CheckCircle, Star, Clock, Eye, BarChart, Gauge, Image, Smartphone, Wifi } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Quiz } from "@/components/Quiz";
 
 const BlogArticle5 = () => {
   return (
@@ -786,6 +787,70 @@ const BlogArticle5 = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Quiz Section */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground">Testirajte svoje znanje o performansama sajta</h2>
+              <Quiz
+                questions={[
+                  {
+                    question: "Koliko korisnika napušta mobilni sajt koji se učitava duže od 3 sekunde?",
+                    options: [
+                      "43%",
+                      "48%",
+                      "53%",
+                      "58%"
+                    ],
+                    correct: 2,
+                    explanation: "53% korisnika napušta mobilni sajt koji se učitava duže od 3 sekunde, što jasno pokazuje kritičnost brzine učitavanja za zadržavanje posetilaca."
+                  },
+                  {
+                    question: "Za koliko procenata može da smanji konverzije jedna sekunda kašnjenja?",
+                    options: [
+                      "5%",
+                      "7%",
+                      "9%",
+                      "11%"
+                    ],
+                    correct: 1,
+                    explanation: "Jedna sekunda kašnjenja u učitavanju može smanjiti konverzije za 7%. Ova statistika je potvrđena kroz više nezavisnih studija i A/B testiranja."
+                  },
+                  {
+                    question: "Koja je preporučena maksimalna vrednost za LCP (Largest Contentful Paint)?",
+                    options: [
+                      "1.5 sekundi",
+                      "2.5 sekundi",
+                      "3.5 sekundi",
+                      "4.5 sekundi"
+                    ],
+                    correct: 1,
+                    explanation: "LCP treba da bude manji od 2.5 sekundi za odličan rezultat. LCP meri vreme potrebno da se učita najveći vidljivi element na stranici."
+                  },
+                  {
+                    question: "Koji format slika pruža najmanju veličinu fajla?",
+                    options: [
+                      "JPEG",
+                      "PNG",
+                      "WebP",
+                      "AVIF"
+                    ],
+                    correct: 3,
+                    explanation: "AVIF format pruža najmanju veličinu fajla - do 50% manje od JPEG-a uz bolji kvalitet. Međutim, podržano je u 73% browsera, dok je WebP univerzalniji izbor."
+                  },
+                  {
+                    question: "Koliko Amazon gubi godišnje zbog svakih dodatnih 100ms kašnjenja?",
+                    options: [
+                      "1.2 milijarde dolara",
+                      "1.4 milijarde dolara",
+                      "1.6 milijardi dolara",
+                      "1.8 milijardi dolara"
+                    ],
+                    correct: 2,
+                    explanation: "Amazon je izračunao da bi im svaki dodatni 100ms kašnjenja koštao 1.6 milijardi dolara godišnje, što pokazuje direktan uticaj brzine na profit velikih kompanija."
+                  }
+                ]}
+              />
+            </div>
 
             {/* Conclusion */}
             <div className="space-y-6">

@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowLeft, CheckCircle, Star, Smartphone, Tablet, Monitor, TrendingUp, Users, ShoppingCart, AlertTriangle, Target, Search } from "lucide-react";
+import { Quiz } from "@/components/Quiz";
 
 const BlogArticle3 = () => {
   return (
@@ -53,7 +54,7 @@ const BlogArticle3 = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="aspect-video bg-secondary rounded-lg overflow-hidden mb-12">
             <img
-              src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&h=600&fit=crop&crop=entropy&auto=format&q=80"
+              src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&h=600&fit=crop&crop=entropy&auto=format&q=60"
               alt="Responsive dizajn na različitim uređajima"
               className="w-full h-full object-cover"
             />
@@ -609,6 +610,70 @@ const BlogArticle3 = () => {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+
+              {/* Quiz Section */}
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-6">Testirajte svoje znanje o responsive dizajnu</h2>
+                <Quiz
+                  questions={[
+                    {
+                      question: "Koji je minimum preporučene veličine dugmadi za mobilne uređaje?",
+                      options: [
+                        "28px x 28px",
+                        "36px x 36px",
+                        "44px x 44px",
+                        "52px x 52px"
+                      ],
+                      correct: 2,
+                      explanation: "Minimum preporučene veličine dugmadi za mobilne uređaje je 44px x 44px. Ova veličina omogućava lako i precizno tapiranje prstom bez slučajnih klikova na susedne elemente."
+                    },
+                    {
+                      question: "Koliko korisnika koristi mobilne uređaje za pristup internetu?",
+                      options: [
+                        "75%",
+                        "82%",
+                        "87%",
+                        "92%"
+                      ],
+                      correct: 3,
+                      explanation: "92% korisnika koristi mobilne uređaje za pristup internetu. Ova statistika jasno pokazuje zašto je responsive dizajn obavezan, a ne opcija u modernom web developmentu."
+                    },
+                    {
+                      question: "Šta je 'mobile-first indexing' kod Google-a?",
+                      options: [
+                        "Google favorizuje mobile aplikacije",
+                        "Google prvo indeksira mobilnu verziju sajta",
+                        "Google rangira samo responsive sajtove",
+                        "Google prikazuje samo mobile rezultate"
+                      ],
+                      correct: 1,
+                      explanation: "Mobile-first indexing znači da Google najpre gleda i indeksira mobilnu verziju vašeg sajta. Ako sajt nije responsive ili mobilna verzija nije dobra, to direktno utiče na rangiranje u pretrazi."
+                    },
+                    {
+                      question: "Koliko povećanje konverzije može doneti dobar responsive dizajn?",
+                      options: [
+                        "20%",
+                        "30%",
+                        "40%",
+                        "50%"
+                      ],
+                      correct: 2,
+                      explanation: "Dobar responsive dizajn može doneti do 40% povećanja konverzije. Korisnici koji mogu lako da navigiraju sajt na mobilnim uređajima značajno su skloniji da izvrše željenu akciju."
+                    },
+                    {
+                      question: "Koji je breakpoint za tablete u responsive dizajnu?",
+                      options: [
+                        "480px - 768px",
+                        "600px - 900px",
+                        "768px - 1024px",
+                        "800px - 1200px"
+                      ],
+                      correct: 2,
+                      explanation: "Standardni breakpoint za tablete je 768px - 1024px. Na ovoj veličini ekrana koristimo hibridni pristup između mobilnog i desktop dizajna, često sa dvostupčanim ili trostupčanim layoutom."
+                    }
+                  ]}
+                />
               </div>
 
               {/* CTA Section */}
