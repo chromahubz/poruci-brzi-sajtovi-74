@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowLeft, ExternalLink, CheckCircle, Star, Lightbulb, Target, AlertTriangle, Repeat, Rocket, Zap, DollarSign } from "lucide-react";
+import Quiz from "@/components/Quiz";
 
 const BlogArticle1 = () => {
   return (
@@ -381,6 +382,71 @@ const BlogArticle1 = () => {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+
+              {/* Quiz Section */}
+              <div className="mb-12">
+                <Quiz
+                  title="Testirajte vaše znanje o izradi sajtova"
+                  description="Proverite koliko ste naučili o procesu kreiranja web sajta za 50€"
+                  questions={[
+                    {
+                      question: "Koliko vremena je potrebno za izradu osnovnog sajta?",
+                      options: [
+                        "1 dan",
+                        "48 sati",
+                        "7 dana",
+                        "Mesec dana"
+                      ],
+                      correctAnswer: 1,
+                      explanation: "Osnovni sajt se pravi za 48 sati, što je jedan od glavnih prednosti našeg paketa za 50€."
+                    },
+                    {
+                      question: "Šta je uključeno u paket od 50€?",
+                      options: [
+                        "Samo dizajn sajta",
+                        "Hosting + domen + responsive dizajn + SSL",
+                        "Samo programiranje",
+                        "Samo hosting"
+                      ],
+                      correctAnswer: 1,
+                      explanation: "Paket od 50€ uključuje hosting, domen, responsive dizajn i SSL sertifikat - sve što je potrebno za funkcionalni sajt."
+                    },
+                    {
+                      question: "Da li sajt radi na mobilnim telefonima?",
+                      options: [
+                        "Ne, potrebna je dodatna optimizacija",
+                        "Da, svi sajtovi su responsive",
+                        "Samo na određenim telefonima",
+                        "To košta dodatno"
+                      ],
+                      correctAnswer: 1,
+                      explanation: "Svi naši sajtovi su responsive i automatski se prilagođavaju svim uređajima (telefoni, tableti, računari)."
+                    },
+                    {
+                      question: "Koliko košta mala izmena na sajtu?",
+                      options: [
+                        "Besplatno je",
+                        "5€",
+                        "10€",
+                        "50€"
+                      ],
+                      correctAnswer: 2,
+                      explanation: "Mala izmena kao što je promena broja telefona ili slike košta 10€, dok paket od 5 izmena košta 30€."
+                    },
+                    {
+                      question: "Šta ako ne znam šta hoću na sajtu?",
+                      options: [
+                        "Moram sam da napravim sadržaj",
+                        "Mi možemo napraviti sadržaj za 100€",
+                        "To nije moguće",
+                        "Sajt se ne može napraviti"
+                      ],
+                      correctAnswer: 1,
+                      explanation: "Nudimo opciju da mi napravimo kompletan sadržaj za 100€ - analiziraćemo vašu delatnost i napraviti profesionalan sadržaj."
+                    }
+                  ]}
+                />
               </div>
 
               {/* CTA Section */}

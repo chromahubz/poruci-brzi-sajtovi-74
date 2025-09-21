@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowLeft, CheckCircle, Star, Globe, Search, DollarSign, AlertTriangle, Crown, Shield, Zap, Target } from "lucide-react";
+import Quiz from "@/components/Quiz";
 
 const BlogArticle2 = () => {
   return (
@@ -531,6 +532,71 @@ const BlogArticle2 = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Quiz Section */}
+              <div className="mb-12">
+                <Quiz
+                  title="Testirajte vaše znanje o domenima"
+                  description="Proverite koliko ste naučili o odabiru pravog domena za vaš biznis"
+                  questions={[
+                    {
+                      question: "Koji je najbolji izbor za lokalni biznis u Srbiji?",
+                      options: [
+                        ".com domen",
+                        ".rs domen",
+                        ".org domen",
+                        ".net domen"
+                      ],
+                      correctAnswer: 1,
+                      explanation: ".rs domen je najbolji za lokalne biznise u Srbiji jer pokazuje geografsku pripadnost i može poboljšati local SEO."
+                    },
+                    {
+                      question: "Šta je najvažnije kod naziva domena?",
+                      options: [
+                        "Da bude što duži",
+                        "Da sadrži što više ključnih reči",
+                        "Da bude kratak, jasan i lako za pamćenje",
+                        "Da sadrži brojeve i specijalne znakove"
+                      ],
+                      correctAnswer: 2,
+                      explanation: "Domen treba da bude kratak, jasan i lako za pamćenje - tako će korisnici lakše da ga upamte i ukucaju."
+                    },
+                    {
+                      question: "Koliko košta .rs domen godišnje?",
+                      options: [
+                        "2000 RSD",
+                        "5000 RSD",
+                        "1000-1500 RSD",
+                        "Besplatan je"
+                      ],
+                      correctAnswer: 2,
+                      explanation: ".rs domen košta između 1000-1500 RSD godišnje, što je pristupačno za većinu biznisa."
+                    },
+                    {
+                      question: "Da li .online domeni mogu biti dobri za biznis?",
+                      options: [
+                        "Ne, nikad nisu dobri",
+                        "Da, mogu biti dobri ako odgovaraju brendu",
+                        "Samo za hobby projekte",
+                        "Samo za međunarodne kompanije"
+                      ],
+                      correctAnswer: 1,
+                      explanation: ".online domeni mogu biti odličan izbor ako odgovaraju vašem brendu i biznisu, posebno za tech i online servise."
+                    },
+                    {
+                      question: "Šta je važno proveriti pre kupovine domena?",
+                      options: [
+                        "Samo da li je dostupan",
+                        "Dostupnost, istoriju, trademark konflikte",
+                        "Samo cenu",
+                        "Ništa posebno"
+                      ],
+                      correctAnswer: 1,
+                      explanation: "Važno je proveriti dostupnost, istoriju domena (da nije bio kažnjen), i da ne krši trademark prava."
+                    }
+                  ]}
+                />
               </div>
 
               {/* CTA Section */}
