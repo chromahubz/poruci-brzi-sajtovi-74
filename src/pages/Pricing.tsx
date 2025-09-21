@@ -23,7 +23,8 @@ const Pricing = () => {
       ],
       popular: true,
       note: "50€ ako dostavite materijal | 100€ ako mi pripremamo sadržaj",
-      renewal: "50€/godišnje"
+      renewal: "50€/godišnje",
+      isPromo: true
     },
     {
       name: "Mikro Sajtovi",
@@ -44,7 +45,7 @@ const Pricing = () => {
     {
       name: "Shop Start",
       price: "150",
-      description: "Osnovna online prodavnica",
+      description: "Osnovna online prodavnica", 
       icon: Crown,
       features: [
         "Do 10 proizvoda",
@@ -57,16 +58,46 @@ const Pricing = () => {
       popular: false,
       note: "Kartično plaćanje/online/kripto: od 250€",
       addon: true
+    },
+    {
+      name: "AI Auto Blog",
+      price: "200",
+      description: "Automatsko kreiranje i objava dnevnih postova optimizovanih za SEO",
+      icon: Star,
+      features: [
+        "Automatsko kreiranje postova",
+        "SEO optimizacija",
+        "Dnevna objava sadržaja",
+        "Analitika performansi",
+        "Ključne reči targeting",
+        "Integracija sa Google Analytics"
+      ],
+      popular: false,
+      note: "Godišnja pretplata - €200/godišnje",
+      renewal: "200€/godišnje",
+      period: "godišnje"
+    },
+    {
+      name: "Kompleksniji sajtovi po meri",
+      price: "kontakt",
+      description: "Za složene projekte i specifične zahteve",
+      icon: Crown,
+      features: [
+        "Custom funkcionalnosti",
+        "Napredne integracije",
+        "Personalizovane ponude",
+        "Dedikovan tim",
+        "Kontinuiran razvoj",
+        "Tehnička podrška"
+      ],
+      popular: false,
+      note: "Kontaktirajte nas za personalizovanu ponudu",
+      renewal: "Po dogovoru",
+      isCustom: true
     }
   ];
 
   const subscriptionServices = [
-    {
-      name: "AI Auto Blog",
-      price: "200",
-      period: "godišnje",
-      description: "Automatsko kreiranje i objava dnevnih postova optimizovanih za SEO"
-    },
     {
       name: "Mesečna Analitika",
       price: "20",
@@ -123,7 +154,7 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
             {mainPlans.map((plan, index) => (
               <Card key={index} className={`relative hover:shadow-elegant transition-all duration-300 ${plan.popular ? 'border-primary scale-105' : ''}`}>
                 {plan.popular && (
@@ -137,17 +168,34 @@ const Pricing = () => {
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
                   <CardDescription className="text-base">{plan.description}</CardDescription>
                   <div className="pt-4">
-                    <div className="text-4xl font-bold text-foreground">
-                      €{plan.price}
-                    </div>
-                    {plan.originalPrice && (
-                      <div className="text-sm text-muted-foreground mt-1">
-                        ({plan.note})
-                      </div>
+                  <div className="text-4xl font-bold text-foreground">
+                    {plan.isCustom ? (
+                      <span className="text-2xl">Kontakt za ponudu</span>
+                    ) : (
+                      <>
+                        {plan.isPromo && plan.originalPrice && (
+                          <div className="flex items-center justify-center gap-2">
+                            <span className="line-through text-muted-foreground text-2xl">€{plan.originalPrice}</span>
+                            <span>€{plan.price}</span>
+                          </div>
+                        )}
+                        {!plan.isPromo && <span>€{plan.price}{plan.period && `/${plan.period}`}</span>}
+                      </>
                     )}
-                    <div className="text-sm text-primary mt-2 font-medium">
-                      Obnova: {plan.renewal}
+                  </div>
+                  {plan.isPromo && (
+                    <div className="text-sm text-destructive font-medium mt-1">
+                      🎉 Promo cena samo do kraja meseca!
                     </div>
+                  )}
+                  {!plan.isPromo && !plan.isCustom && plan.originalPrice && (
+                    <div className="text-sm text-muted-foreground mt-1">
+                      ({plan.note})
+                    </div>
+                  )}
+                  <div className="text-sm text-primary mt-2 font-medium">
+                    {!plan.isCustom && `Obnova: ${plan.renewal}`}
+                  </div>
                   </div>
                 </CardHeader>
 
@@ -176,32 +224,17 @@ const Pricing = () => {
                     asChild
                   >
                     <Link to="/kontakt">
-                      Poruči {plan.name}
+                      {plan.isCustom ? 'Kontaktiraj nas' : `Poruči ${plan.name === "Mikro Sajtovi" ? "Mikro Sajtove" : plan.name}`}
                     </Link>
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
-
-          {/* Custom Website Note */}
-          <div className="text-center mt-16">
-            <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-secondary border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary">Kompleksniji sajtovi po meri?</CardTitle>
-                <CardDescription className="text-base">
-                  Za složene projekte, custom funkcionalnosti i specifične zahteve - kontaktirajte nas za personalizovanu ponudu
-                </CardDescription>
-                <Button variant="outline" size="lg" asChild className="mt-4">
-                  <Link to="/kontakt">Kontaktiraj nas za custom ponudu</Link>
-                </Button>
-              </CardHeader>
-            </Card>
-          </div>
         </div>
       </section>
 
-      {/* Subscription Services */}
+      {/* Subscription Services - keeping remaining services */}
       <section className="py-20 px-4 bg-secondary">
         <div className="container mx-auto">
           <div className="text-center space-y-4 mb-16">
@@ -213,20 +246,29 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {subscriptionServices.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-soft transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg">{service.name}</CardTitle>
-                  <div className="text-2xl font-bold text-primary">
-                    €{service.price}<span className="text-sm text-muted-foreground">/{service.period}</span>
-                  </div>
-                  <CardDescription className="text-sm mt-2">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Card className="text-center hover:shadow-soft transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-lg">Mesečna Analitika</CardTitle>
+                <div className="text-2xl font-bold text-primary">
+                  €20<span className="text-sm text-muted-foreground">/mesečno</span>
+                </div>
+                <CardDescription className="text-sm mt-2">
+                  Izveštaj o posetama, najposećenijim stranicama i preporuke za rast
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="text-center hover:shadow-soft transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-lg">Održavanje sajta</CardTitle>
+                <div className="text-2xl font-bold text-primary">
+                  €20<span className="text-sm text-muted-foreground">/mesečno</span>
+                </div>
+                <CardDescription className="text-sm mt-2">
+                  Redovna ažuriranja i backup
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </div>
         </div>
       </section>
@@ -277,7 +319,13 @@ const Pricing = () => {
             <Card className="text-center">
               <CardHeader>
                 <CardTitle className="text-xl">Standardna obnova</CardTitle>
-                <div className="text-3xl font-bold text-primary">€50</div>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="line-through text-muted-foreground text-2xl">€100</span>
+                  <span className="text-3xl font-bold text-primary">€50</span>
+                </div>
+                <div className="text-sm text-destructive font-medium mt-1">
+                  🎉 Promo cena samo do kraja meseca!
+                </div>
                 <CardDescription>
                   Nastavak domene i hostinga (za .com/.net/.org/.rs domene)
                 </CardDescription>
@@ -319,7 +367,7 @@ const Pricing = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Da, naše cene su transparentne i finalne. Osnovni paket od 50€ uključuje celu prvu godinu hostinga i domene.
+                  Da, naše cene su transparentne i finalne. Osnovni paket od 50€ uključuje celu prvu godinu hostinga i domene. Napomena: trenutna cena od 50€ je promo cena koja važi samo do kraja meseca.
                 </p>
               </CardContent>
             </Card>
@@ -396,7 +444,7 @@ const Pricing = () => {
               <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">
                 <Link to="/kontakt">Kontaktiraj nas</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 border-white text-primary hover:bg-white hover:text-primary">
                 <Link to="/portfolio">Pogledaj portfolio</Link>
               </Button>
             </div>

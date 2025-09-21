@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ExternalLink, Monitor, ShoppingCart, Smartphone } from "lucide-react";
+import healthcareImage from "@/assets/healthcare-app-thumbnail.jpg";
 
 const Portfolio = () => {
   const projects = [
@@ -56,7 +57,7 @@ const Portfolio = () => {
       description: "Aplikacija za praćenje zdravlja i komunikaciju sa lekarima",
       category: "Mobilna app",
       technologies: ["Flutter", "Firebase", "Node.js"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
+      image: healthcareImage,
       type: "mobile",
       icon: Smartphone
     }
