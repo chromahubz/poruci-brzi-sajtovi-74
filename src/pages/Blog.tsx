@@ -65,6 +65,46 @@ const Blog = () => {
       category: "E-commerce",
       readTime: "10 min",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+    },
+    {
+      id: 7,
+      title: "Social Media za Biznis: Instagram i Facebook za Početnike",
+      excerpt: "Kompletni vodič za pokretanje biznis profila na društvenim mrežama. Strategije sadržaja, plaćene reklame i merenje rezultata za maksimalan ROI.",
+      author: "Poruči Sajt Tim",
+      date: "20. januar 2025",
+      category: "Social Media",
+      readTime: "15 min",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+    },
+    {
+      id: 8,
+      title: "Google My Business - Vodič za Lokalne Biznise u Srbiji",
+      excerpt: "Kompletni vodič za optimizaciju Google My Business profila. Naučite kako da privučete lokalne klijente i poboljšate rangiranje u Google Maps pretragama.",
+      author: "Poruči Sajt Tim",
+      date: "22. januar 2025",
+      category: "Lokalni SEO",
+      readTime: "12 min",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+    },
+    {
+      id: 9,
+      title: "Online Marketing sa Malim Budžetom - Maksimalni ROI za Mala Preduzeća",
+      excerpt: "Kako da ostvarite velike rezultate u online marketingu sa ograničenim sredstvima. Praktični vodič sa konkretnim strategijama i budget planovima.",
+      author: "Poruči Sajt Tim",
+      date: "25. januar 2025",
+      category: "Budget Marketing",
+      readTime: "14 min",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+    },
+    {
+      id: 10,
+      title: "Zašto je Blog Važan za Vaš Biznis - Kako Specijalizovan Sadržaj Privlači Klijente",
+      excerpt: "Otkrijte kako blog može da transformiše vaš biznis u authority u vašoj oblasti i dovede kontinuirani tok novih klijenata kroz organsko rangiranje.",
+      author: "Poruči Sajt Tim",
+      date: "28. januar 2025",
+      category: "Content Marketing",
+      readTime: "12 min",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
     }
   ];
 

@@ -672,7 +672,7 @@ const BlogArticle6 = () => {
                       Besplatna e-commerce konsultacija
                     </Link>
                   </Button>
-                  <Button variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10" asChild size="lg">
+                  <Button variant="secondary" asChild size="lg" className="text-blue-800 hover:text-blue-900">
                     <Link to="/cene">
                       <TrendingUp className="w-4 h-4 mr-2" />
                       Pogledaj cene

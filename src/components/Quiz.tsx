@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle, RotateCcw } from "lucide-react";
@@ -22,6 +22,7 @@ const Quiz = ({ title, description, questions }: QuizProps) => {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [userAnswers, setUserAnswers] = useState<number[]>([]);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (selectedAnswer !== null) return;
@@ -52,12 +53,154 @@ const Quiz = ({ title, description, questions }: QuizProps) => {
     setShowResult(false);
     setScore(0);
     setUserAnswers([]);
+    setShowConfetti(false);
   };
 
   const isQuizComplete = currentQuestion === questions.length - 1 && showResult;
+  const isPerfectScore = score === questions.length;
+
+  // Pokreni konfeti animaciju za savršen rezultat
+  useEffect(() => {
+    if (isQuizComplete && isPerfectScore) {
+      setShowConfetti(true);
+      // Zaustavi animaciju posle 4 sekunde
+      const timer = setTimeout(() => {
+        setShowConfetti(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [isQuizComplete, isPerfectScore]);
+
+  // Konfeti komponenta
+  const ConfettiAnimation = () => {
+    if (!showConfetti) return null;
+
+    return (
+      <>
+        <style>{`
+          @keyframes confetti-burst {
+            0% {
+              opacity: 1;
+              transform: scale(0) rotate(0deg) translateX(0) translateY(0);
+            }
+            10% {
+              opacity: 1;
+              transform: scale(1) rotate(36deg) translateX(20px) translateY(-20px);
+            }
+            100% {
+              opacity: 0;
+              transform: scale(1) rotate(360deg) translateX(var(--x)) translateY(var(--y));
+            }
+          }
+
+          @keyframes confetti-fall-burst {
+            0% {
+              opacity: 1;
+              transform: scale(0) translateX(0) translateY(0) rotate(0deg);
+            }
+            15% {
+              opacity: 1;
+              transform: scale(1.2) translateX(var(--burst-x)) translateY(var(--burst-y)) rotate(180deg);
+            }
+            100% {
+              opacity: 0;
+              transform: scale(0.8) translateX(var(--final-x)) translateY(calc(var(--final-y) + 150px)) rotate(720deg);
+            }
+          }
+
+          .confetti-piece {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            pointer-events: none;
+            z-index: 9999;
+            border-radius: 2px;
+            top: 50%;
+            left: 50%;
+            animation: confetti-burst 2.5s ease-out forwards;
+          }
+
+          .confetti-piece-fall {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            pointer-events: none;
+            z-index: 9999;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            animation: confetti-fall-burst 3s ease-out forwards;
+          }
+
+          .confetti-piece:nth-child(odd) {
+            border-radius: 50%;
+          }
+
+          .confetti-piece:nth-child(3n) {
+            width: 6px;
+            height: 16px;
+            border-radius: 3px;
+          }
+
+          .confetti-piece:nth-child(4n) {
+            width: 14px;
+            height: 6px;
+            border-radius: 3px;
+          }
+        `}</style>
+        <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+          {/* Glavni burst konfeti */}
+          {[...Array(80)].map((_, i) => {
+            const angle = (i / 80) * 360;
+            const velocity = 50 + Math.random() * 200;
+            const x = Math.cos((angle * Math.PI) / 180) * velocity;
+            const y = Math.sin((angle * Math.PI) / 180) * velocity;
+
+            return (
+              <div
+                key={`burst-${i}`}
+                className="confetti-piece"
+                style={{
+                  '--x': `${x}px`,
+                  '--y': `${y}px`,
+                  animationDelay: `${Math.random() * 0.5}s`,
+                  backgroundColor: `hsl(${Math.random() * 360}, 75%, 65%)`,
+                }}
+              />
+            );
+          })}
+
+          {/* Dodatni falling konfeti za više efekta */}
+          {[...Array(60)].map((_, i) => {
+            const burstX = (Math.random() - 0.5) * 100;
+            const burstY = (Math.random() - 0.5) * 80;
+            const finalX = (Math.random() - 0.5) * 400;
+            const finalY = 100 + Math.random() * 200;
+
+            return (
+              <div
+                key={`fall-${i}`}
+                className="confetti-piece-fall"
+                style={{
+                  '--burst-x': `${burstX}px`,
+                  '--burst-y': `${burstY}px`,
+                  '--final-x': `${finalX}px`,
+                  '--final-y': `${finalY}px`,
+                  animationDelay: `${0.3 + Math.random() * 1}s`,
+                  backgroundColor: `hsl(${Math.random() * 360}, 80%, 70%)`,
+                }}
+              />
+            );
+          })}
+        </div>
+      </>
+    );
+  };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <>
+      <ConfettiAnimation />
+      <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-2xl">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
@@ -158,6 +301,7 @@ const Quiz = ({ title, description, questions }: QuizProps) => {
         )}
       </CardContent>
     </Card>
+    </>
   );
 };
 
