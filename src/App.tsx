@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/usluge" element={<Services />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/cene" element={<Pricing />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/kontakt" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

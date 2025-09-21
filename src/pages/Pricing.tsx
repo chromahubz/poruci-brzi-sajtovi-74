@@ -45,6 +45,7 @@ const Pricing = () => {
     {
       name: "Shop Start",
       price: "150",
+      originalPrice: "300",
       description: "Osnovna online prodavnica", 
       icon: Crown,
       features: [
@@ -57,6 +58,8 @@ const Pricing = () => {
       ],
       popular: false,
       note: "Kartično plaćanje/online/kripto: od 250€",
+      renewal: "150€/godišnje",
+      isPromo: true,
       addon: true
     },
     {
@@ -73,9 +76,8 @@ const Pricing = () => {
         "Integracija sa Google Analytics"
       ],
       popular: false,
-      note: "Godišnja pretplata - €200/godišnje",
-      renewal: "200€/godišnje",
-      period: "godišnje"
+      note: "Godišnja pretplata",
+      renewal: "200€/godišnje"
     },
     {
       name: "Kompleksniji sajtovi po meri",
@@ -83,11 +85,11 @@ const Pricing = () => {
       description: "Za složene projekte i specifične zahteve",
       icon: Crown,
       features: [
-        "Custom funkcionalnosti",
+        "Funkcionalnosti po želji",
         "Napredne integracije",
         "Personalizovane ponude",
-        "Dedikovan tim",
-        "Kontinuiran razvoj",
+        "Stručni tim eksperata",
+        "Fleksibilan razvoj",
         "Tehnička podrška"
       ],
       popular: false,
@@ -97,20 +99,6 @@ const Pricing = () => {
     }
   ];
 
-  const subscriptionServices = [
-    {
-      name: "Mesečna Analitika",
-      price: "20",
-      period: "mesečno",
-      description: "Izveštaj o posetama, najposećenijim stranicama i preporuke za rast"
-    },
-    {
-      name: "Održavanje sajta",
-      price: "20",
-      period: "mesečno",
-      description: "Redovna ažuriranja i backup"
-    }
-  ];
 
   const addons = [
     { name: "Mala izmena / manja dopuna", price: "10", note: "Promena broja telefona, jedne slike..." },
@@ -123,7 +111,10 @@ const Pricing = () => {
     { name: "Google Business profil", price: "20", note: "Kreiranje i optimizacija naloga" },
     { name: "Newsletter integracija", price: "25", note: "Mailchimp ili sličan servis" },
     { name: "Fotografisanje lokala/proizvoda", price: "70", note: "Cena zavisi od lokacije i broja fotografija" },
-    { name: "Pisanje kompletnog sadržaja", price: "40", note: "Po stranici" }
+    { name: "Pisanje kompletnog sadržaja", price: "40", note: "Po stranici" },
+    { name: "Mesečna Analitika", price: "20", note: "Izveštaj o posetama, najposećenijim stranicama i preporuke za rast (mesečno)" },
+    { name: "Održavanje sajta za sve pakete VAN osnovnog", price: "20", note: "Redovna ažuriranja i backup (mesečno)" },
+    { name: "Premium domeni (.com/.net/.org/.rs)", price: "30", note: "Godišnja naknada za premium domene" }
   ];
 
   return (
@@ -179,7 +170,7 @@ const Pricing = () => {
                             <span>€{plan.price}</span>
                           </div>
                         )}
-                        {!plan.isPromo && <span>€{plan.price}{plan.period && `/${plan.period}`}</span>}
+                        {!plan.isPromo && <span>€{plan.price}</span>}
                       </>
                     )}
                   </div>
@@ -193,9 +184,6 @@ const Pricing = () => {
                       ({plan.note})
                     </div>
                   )}
-                  <div className="text-sm text-primary mt-2 font-medium">
-                    {!plan.isCustom && `Obnova: ${plan.renewal}`}
-                  </div>
                   </div>
                 </CardHeader>
 
@@ -234,44 +222,6 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Subscription Services - keeping remaining services */}
-      <section className="py-20 px-4 bg-secondary">
-        <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Pretplatne usluge
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Kontinuirane usluge za rast i održavanje vašeg sajta
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Card className="text-center hover:shadow-soft transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg">Mesečna Analitika</CardTitle>
-                <div className="text-2xl font-bold text-primary">
-                  €20<span className="text-sm text-muted-foreground">/mesečno</span>
-                </div>
-                <CardDescription className="text-sm mt-2">
-                  Izveštaj o posetama, najposećenijim stranicama i preporuke za rast
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="text-center hover:shadow-soft transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg">Održavanje sajta</CardTitle>
-                <div className="text-2xl font-bold text-primary">
-                  €20<span className="text-sm text-muted-foreground">/mesečno</span>
-                </div>
-                <CardDescription className="text-sm mt-2">
-                  Redovna ažuriranja i backup
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Add-ons */}
       <section className="py-20 px-4">
@@ -327,7 +277,7 @@ const Pricing = () => {
                   🎉 Promo cena samo do kraja meseca!
                 </div>
                 <CardDescription>
-                  Nastavak domene i hostinga (za .com/.net/.org/.rs domene)
+                  Nastavak domene i hostinga
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -374,11 +324,11 @@ const Pricing = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Šta ako ne dostavim materijal?</CardTitle>
+                <CardTitle className="text-lg">Šta ako ne dostavim materijal za Osnovni Paket?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Ako ne dostavite tekst, slike i boje, mi ćemo pripremiti osnovni sadržaj za 100€ (uključena 1 revizija).
+                  Ako ne dostavite tekst, slike i boje za Osnovni Paket, mi ćemo pripremiti osnovni sadržaj za 100€ (uključena 1 revizija).
                 </p>
               </CardContent>
             </Card>
