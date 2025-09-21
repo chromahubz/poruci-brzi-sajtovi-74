@@ -1,10 +1,75 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Switch } from "@/components/ui/switch";
 import { Link } from "react-router-dom";
-import { Check, Star, Zap, Crown } from "lucide-react";
+import { Check, Star, Zap, Crown, Mail, Phone, User, MessageSquare } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Pricing = () => {
+  const { toast } = useToast();
+  const [open, setOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    hasOwnMaterials: true,
+    websiteText: "",
+    colorPreferences: "",
+    imageDescription: "",
+    domainPreference: ""
+  });
+
+  const handlePlanSelect = (planIndex: number) => {
+    setSelectedPlan(planIndex);
+    setOpen(true);
+    // Reset form when opening modal
+    setFormData({ name: "", email: "", phone: "", message: "", hasOwnMaterials: true, websiteText: "", colorPreferences: "", imageDescription: "", domainPreference: "" });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Hvala na porudžbini!",
+      description: "Upravo smo vam poslali mejl za dodatne informacije.",
+    });
+    // Reset form and close modal
+    setFormData({ name: "", email: "", phone: "", message: "", hasOwnMaterials: true, websiteText: "", colorPreferences: "", imageDescription: "", domainPreference: "" });
+    setOpen(false);
+    setSelectedPlan(null);
+  };
+
+  const handleChange = (field: string, value: string | boolean) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const getCurrentPrice = () => {
+    if (selectedPlan === null) return 0;
+    const basePlan = mainPlans[selectedPlan];
+    if (basePlan.isCustom) return 0;
+
+    const basePrice = parseInt(basePlan.price);
+
+    // For Osnovni Paket, pricing depends on materials
+    if (selectedPlan === 0) { // Osnovni Paket
+      return formData.hasOwnMaterials ? 50 : 100;
+    }
+
+    // For Mikro Sajtovi, pricing depends on materials
+    if (selectedPlan === 1) { // Mikro Sajtovi
+      return formData.hasOwnMaterials ? 200 : 500;
+    }
+
+    return basePrice;
+  };
+
   const mainPlans = [
     {
       name: "Osnovni Paket",
@@ -33,8 +98,8 @@ const Pricing = () => {
       icon: Star,
       features: [
         "5 manjih sajtova (do 2 strane po sajtu)",
-        "5 domena (1 godina uključena)",
-        "Limit poseta: do ~2.000 mesečno po sajtu",
+        "5 domena (.online/.store/.shop - 1 godina uključena)",
+        "Limit poseta: do ~10.000 mesečno po sajtu",
         "Jednokratna isporuka, bez revizija",
         "Idealno za više projekata"
       ],
@@ -54,18 +119,38 @@ const Pricing = () => {
         "Pouzeće, lično preuzimanje, slanje na račun",
         "Notifikacija narudžbine na e-mail",
         "Responzivan dizajn",
-        "Osnovna SEO optimizacija"
+        "Osnovna SEO optimizacija",
+        "Limit poseta: do ~10.000 mesečno"
       ],
       popular: false,
-      note: "Kartično plaćanje/online/kripto: od 250€",
+      note: "Za integraciju online plaćanja kontaktirajte za više detalja",
       renewal: "150€/godišnje",
       isPromo: true,
       addon: true
     },
     {
-      name: "AI Auto Blog",
+      name: "Shop Pro",
+      price: "500",
+      description: "Napredna online prodavnica za ozbiljan biznis",
+      icon: Crown,
+      features: [
+        "Do 50 proizvoda",
+        "Forma za naručivanje",
+        "Pouzeće, lično preuzimanje, slanje na račun",
+        "Notifikacija narudžbine na e-mail",
+        "Responzivan dizajn",
+        "Napredna SEO optimizacija",
+        "Neograničen broj poseta",
+        "Prioritetna tehnička podrška"
+      ],
+      popular: false,
+      note: "Za integraciju online plaćanja kontaktirajte za više detalja",
+      renewal: "300€/godišnje"
+    },
+    {
+      name: "Auto Blog",
       price: "200",
-      description: "Automatsko kreiranje i objava dnevnih postova optimizovanih za SEO",
+      description: "Blog piše relevantan sadržaj i na svakoj objavi preusmerava na vaš glavni sajt",
       icon: Star,
       features: [
         "Automatsko kreiranje postova",
@@ -73,10 +158,11 @@ const Pricing = () => {
         "Dnevna objava sadržaja",
         "Analitika performansi",
         "Ključne reči targeting",
-        "Integracija sa Google Analytics"
+        "Domen (.online/.blog - 1 godina uključena)",
+        "Limit poseta: do ~10.000 mesečno"
       ],
       popular: false,
-      note: "Godišnja pretplata",
+      note: "Automatski blog za bolji SEO i više poseta",
       renewal: "200€/godišnje"
     },
     {
@@ -85,6 +171,8 @@ const Pricing = () => {
       description: "Za složene projekte i specifične zahteve",
       icon: Crown,
       features: [
+        "Web aplikacije",
+        "Mobilne aplikacije",
         "Funkcionalnosti po želji",
         "Napredne integracije",
         "Personalizovane ponude",
@@ -110,6 +198,7 @@ const Pricing = () => {
     { name: "SEO Start paket", price: "50", note: "Naprednija optimizacija" },
     { name: "Google Business profil", price: "20", note: "Kreiranje i optimizacija naloga" },
     { name: "Newsletter integracija", price: "25", note: "Mailchimp ili sličan servis" },
+    { name: "Kartično plaćanje/online/kripto", price: "od 250", note: "Zavisi od prodajnih kartica" },
     { name: "Fotografisanje lokala/proizvoda", price: "70", note: "Cena zavisi od lokacije i broja fotografija" },
     { name: "Pisanje kompletnog sadržaja", price: "40", note: "Po stranici" },
     { name: "Mesečna Analitika", price: "20", note: "Izveštaj o posetama, najposećenijim stranicama i preporuke za rast (mesečno)" },
@@ -145,9 +234,9 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 max-w-7xl mx-auto">
             {mainPlans.map((plan, index) => (
-              <Card key={index} className={`relative hover:shadow-elegant transition-all duration-300 ${plan.popular ? 'border-primary scale-105' : ''}`}>
+              <Card key={index} className={`relative hover:shadow-elegant transition-all duration-300 flex flex-col h-full ${plan.popular ? 'border-primary scale-105' : ''}`}>
                 {plan.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1">
                     Najpopularniji
@@ -187,8 +276,8 @@ const Pricing = () => {
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
-                  <ul className="space-y-3">
+                <CardContent className="flex flex-col flex-grow space-y-6">
+                  <ul className="space-y-3 flex-grow">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-3">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -205,20 +294,19 @@ const Pricing = () => {
                     </div>
                   )}
 
-                  <Button 
-                    className="w-full" 
+                  <Button
+                    className="w-full mt-auto"
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
-                    asChild
+                    onClick={() => plan.isCustom ? window.location.href = '/kontakt' : handlePlanSelect(index)}
                   >
-                    <Link to="/kontakt">
-                      {plan.isCustom ? 'Kontaktiraj nas' : `Poruči ${plan.name === "Mikro Sajtovi" ? "Mikro Sajtove" : plan.name}`}
-                    </Link>
+                    {plan.isCustom ? 'Kontaktiraj nas' : 'Poruči'}
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -241,7 +329,7 @@ const Pricing = () => {
                 <CardHeader>
                   <CardTitle className="text-lg">{addon.name}</CardTitle>
                   <div className="text-2xl font-bold text-primary">
-                    €{addon.price}{addon.price.includes("od") ? "" : ""}
+                    {addon.price.includes("od") ? `od €${addon.price.replace("od ", "")}` : `€${addon.price}`}
                   </div>
                   <CardDescription className="text-sm mt-2">
                     {addon.note}
@@ -324,11 +412,11 @@ const Pricing = () => {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Šta ako ne dostavim materijal za Osnovni Paket?</CardTitle>
+                <CardTitle className="text-lg">Šta ako ne dostavim materijal?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Ako ne dostavite tekst, slike i boje za Osnovni Paket, mi ćemo pripremiti osnovni sadržaj za 100€ (uključena 1 revizija).
+                  Cena se menja ako mi pišemo sadržaj, proverite cenovnik iznad.
                 </p>
               </CardContent>
             </Card>
@@ -401,6 +489,196 @@ const Pricing = () => {
           </div>
         </div>
       </section>
+
+      {/* Order Modal */}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">
+              {selectedPlan !== null ? `Poručite: ${mainPlans[selectedPlan].name}` : 'Porudžbina'}
+            </DialogTitle>
+            <DialogDescription>
+              Popunite formu i kontaktiraćemo vas u najkraćem roku
+            </DialogDescription>
+          </DialogHeader>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="orderName">
+                  <User className="w-4 h-4 inline mr-2" />
+                  Ime i prezime
+                </Label>
+                <Input
+                  id="orderName"
+                  placeholder="Vaše ime i prezime"
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="orderEmail">
+                  <Mail className="w-4 h-4 inline mr-2" />
+                  Email adresa
+                </Label>
+                <Input
+                  id="orderEmail"
+                  type="email"
+                  placeholder="vas@email.com"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="orderPhone">
+                <Phone className="w-4 h-4 inline mr-2" />
+                Broj telefona
+              </Label>
+              <Input
+                id="orderPhone"
+                placeholder="+381 60 123 4567"
+                value={formData.phone}
+                onChange={(e) => handleChange("phone", e.target.value)}
+                required
+              />
+            </div>
+
+            {/* Material Provision Toggle */}
+            <div className="space-y-4 p-4 bg-secondary rounded-lg">
+              <div className="flex items-center space-x-3">
+                <Switch
+                  id="hasOwnMaterials"
+                  checked={formData.hasOwnMaterials}
+                  onCheckedChange={(checked) => handleChange("hasOwnMaterials", checked)}
+                />
+                <Label htmlFor="hasOwnMaterials" className="text-base font-medium">
+                  Imam svoj tekst, slike i boje sajta
+                </Label>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {formData.hasOwnMaterials
+                  ? "Odlično! Dostavićete nam sve potrebne materijale."
+                  : "Mi ćemo kreirati sadržaj za vas (uključuje 1 reviziju)."}
+              </p>
+            </div>
+
+            {/* Conditional Fields - Show when user doesn't have materials */}
+            {!formData.hasOwnMaterials && (
+              <div className="space-y-4 p-4 border border-primary/20 rounded-lg">
+                <h4 className="font-medium text-primary">Opišite šta želite na sajtu:</h4>
+
+                <div className="space-y-2">
+                  <Label htmlFor="websiteText">Opis sadržaja sajta</Label>
+                  <Textarea
+                    id="websiteText"
+                    placeholder="Opišite vašu delatnost, usluge, proizvode... Što detaljnije, bolje možemo kreirati sadržaj."
+                    className="min-h-[80px]"
+                    value={formData.websiteText}
+                    onChange={(e) => handleChange("websiteText", e.target.value)}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="colorPreferences">Boje i stil sajta</Label>
+                  <Input
+                    id="colorPreferences"
+                    placeholder="Npr. plava i bela, moderan, klasičan, minimalistički..."
+                    value={formData.colorPreferences}
+                    onChange={(e) => handleChange("colorPreferences", e.target.value)}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="imageDescription">Opis potrebnih slika</Label>
+                  <Textarea
+                    id="imageDescription"
+                    placeholder="Opišite kakve slike trebate (proizvodi, usluge, ljudi, lokacija...)"
+                    className="min-h-[60px]"
+                    value={formData.imageDescription}
+                    onChange={(e) => handleChange("imageDescription", e.target.value)}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Domain Preference */}
+            <div className="space-y-2">
+              <Label htmlFor="domainPreference">Željeni domen (opciono)</Label>
+              <Input
+                id="domainPreference"
+                placeholder="Npr. mojsajt.com, mojafirma.rs..."
+                value={formData.domainPreference}
+                onChange={(e) => handleChange("domainPreference", e.target.value)}
+              />
+              <p className="text-xs text-muted-foreground">
+                Ukoliko ne unesete, mi ćemo predložiti domen na osnovu vašeg imena/delatnosti.{" "}
+                <a
+                  href="https://lookup.icann.org/en/lookup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline font-medium"
+                >
+                  PROVERI DA LI JE DOMEN SLOBODAN
+                </a>
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="orderMessage">
+                <MessageSquare className="w-4 h-4 inline mr-2" />
+                Dodatne napomene
+              </Label>
+              <Textarea
+                id="orderMessage"
+                placeholder="Dodatni zahtevi, pitanja ili napomene..."
+                className="min-h-[80px]"
+                value={formData.message}
+                onChange={(e) => handleChange("message", e.target.value)}
+              />
+            </div>
+
+            {selectedPlan !== null && (
+              <div className="bg-secondary p-4 rounded-lg">
+                <div className="text-sm text-muted-foreground">
+                  <strong>Selektovani paket:</strong> {mainPlans[selectedPlan].name}<br/>
+                  <strong>Cena:</strong>
+                  {(selectedPlan === 0 || selectedPlan === 1) ? (
+                    <span className="ml-1">
+                      €{getCurrentPrice()}
+                      {formData.hasOwnMaterials ? (
+                        <span className="text-primary"> (sa vašim materijalima)</span>
+                      ) : (
+                        <span className="text-primary"> (mi kreiramo sadržaj)</span>
+                      )}
+                    </span>
+                  ) : (
+                    <span className="ml-1">€{mainPlans[selectedPlan].price}</span>
+                  )}<br/>
+                  <strong>Opis:</strong> {mainPlans[selectedPlan].description}
+                </div>
+              </div>
+            )}
+
+            <div className="flex gap-3">
+              <Button type="submit" size="lg" className="flex-1">
+                Potvrdi porudžbinu
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="lg"
+                onClick={() => setOpen(false)}
+              >
+                Otkaži
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

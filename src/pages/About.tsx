@@ -30,18 +30,31 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Poruci Sajt je nastao iz želje da svima omogućimo pristup kvalitetnim web sajtovima, 
-                  bez obzira na budžet. Videli smo da su mnogi mali preduzetnici i startapovi odustajali 
+                  Poruci Sajt je nastao iz želje da svima omogućimo pristup kvalitetnim web sajtovima,
+                  bez obzira na budžet. Videli smo da su mnogi mali preduzetnici i startapovi odustajali
                   od digitalnog prisustva zbog visokih cena.
                 </p>
                 <p>
-                  Naš tim čine iskusni programeri, dizajneri i digitalni stručnjaci koji veruju da 
-                  kvalitet ne mora da bude skup. Kombinujemo moderne tehnologije sa efikasnim procesima 
-                  rada kako bismo vam doneli najbolji rezultat u najkraćem roku.
+                  Mi smo tim mladih, ali iskusnih profesionalaca koji je već radio sa klijentima širom sveta.
+                  Naše iskustvo uključuje rad na projektima iz Evrope, Amerike i Azije, gde smo vodili social
+                  media stranice za vodeće brendove, snimali promocione videe koji su postigli milione pregleda,
+                  i kreirali reklamne kampanje koje su donele fantastične rezultate svim klijentima.
                 </p>
                 <p>
-                  Do sada smo napravili više od 500 sajtova za klijente iz cele Srbije i regiona. 
-                  Naša misija je da vaš biznis blista online!
+                  Naš tim čine iskusni programeri, dizajneri i digitalni marketing stručnjaci koji veruju da
+                  kvalitet ne mora da bude skup. Kombinujemo moderne tehnologije sa efikasnim procesima
+                  rada i globalnim iskustvom kako bismo vam doneli najbolji rezultat u najkraćem roku.
+                </p>
+                <p>
+                  Uprkos tome što smo mladi, naše znanje i profesionalnost su prepoznati na međunarodnom nivou.
+                  Radili smo sa startup kompanijama koje su danas vredne milione dolara, kao i sa etabliranim
+                  korporacijama koje su poboljšale svoje digitalno prisustvo zahvaljujući našem radu.
+                </p>
+                <p>
+                  Do sada smo napravili više od 500 sajtova za klijente iz cele Srbije i regiona, a naše
+                  marketing kampanje su generirale preko 50 miliona pregleda na društvenim mrežama.
+                  Naša misija je da vaš biznis blista online sa istom profesionalnošću kojom smo pomagali
+                  klijentima u najrazvijenijim tržištima sveta!
                 </p>
               </div>
               <Button asChild size="lg">

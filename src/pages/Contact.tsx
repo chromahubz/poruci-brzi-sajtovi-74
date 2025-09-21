@@ -107,15 +107,16 @@ const Contact = () => {
                         <Label htmlFor="service">Tip usluge</Label>
                         <Select value={formData.service} onValueChange={(value) => handleChange("service", value)}>
                           <SelectTrigger>
-                            <SelectValue placeholder="Odaberite uslugu" />
+                            <SelectValue placeholder="Odaberite paket" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="web-sajt">Web sajt</SelectItem>
-                            <SelectItem value="e-commerce">E-commerce</SelectItem>
-                            <SelectItem value="mobilna-app">Mobilna aplikacija</SelectItem>
-                            <SelectItem value="redesign">Redizajn postojećeg sajta</SelectItem>
-                            <SelectItem value="održavanje">Održavanje sajta</SelectItem>
-                            <SelectItem value="seo">SEO optimizacija</SelectItem>
+                            <SelectItem value="osnovni-paket">Osnovni Paket (50€)</SelectItem>
+                            <SelectItem value="mikro-sajtovi">Mikro Sajtovi (200€)</SelectItem>
+                            <SelectItem value="shop-start">Shop Start (150€)</SelectItem>
+                            <SelectItem value="shop-pro">Shop Pro (500€)</SelectItem>
+                            <SelectItem value="auto-blog">Auto Blog (200€)</SelectItem>
+                            <SelectItem value="kompleksniji-sajtovi">Kompleksniji sajtovi po meri</SelectItem>
+                            <SelectItem value="dodatne-usluge">Dodatne usluge</SelectItem>
                             <SelectItem value="ostalo">Ostalo</SelectItem>
                           </SelectContent>
                         </Select>
@@ -149,7 +150,7 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle>Kontakt informacije</CardTitle>
                   <CardDescription>
-                    Dostupni smo radnim danima od 9 do 18h
+                    Dostupni 24/7 preko email forme
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -157,7 +158,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-medium">Email</div>
-                      <div className="text-sm text-muted-foreground">info@porucisajt.rs</div>
+                      <div className="text-sm text-muted-foreground">kontakt@porucisajt.com</div>
                     </div>
                   </div>
 
@@ -173,7 +174,7 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-medium">Adresa</div>
-                      <div className="text-sm text-muted-foreground">Beograd, Srbija</div>
+                      <div className="text-sm text-muted-foreground">Bulevar Kralja Aleksandra 198, Beograd, Srbija</div>
                     </div>
                   </div>
 
