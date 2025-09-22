@@ -1137,9 +1137,9 @@ const BlogArticle24 = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="text-sm space-y-1">
-                      <li>• LCP < 2.5s</li>
-                      <li>• FID < 100ms</li>
-                      <li>• CLS < 0.1</li>
+                      <li>• LCP &lt; 2.5s</li>
+                      <li>• FID &lt; 100ms</li>
+                      <li>• CLS &lt; 0.1</li>
                       <li>• Redovno monitiranje</li>
                       <li>• PageSpeed optimizacija</li>
                     </ul>
