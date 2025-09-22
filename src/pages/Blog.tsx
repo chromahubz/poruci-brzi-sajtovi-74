@@ -157,6 +157,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 25,
+      title: "Mikrosajtovi za Lokalne Biznise: Kako da Dominirate Google Pretragama u Srbiji",
+      excerpt: "Otkrijte moćnu strategiju koja omogućava malim preduzećima da zauzmu više pozicija u Google rezultatima i privuku značajno više kupaca iz svoje lokalne oblasti. Kompletan vodič kroz kreiranje i monetizaciju mikrosajtova.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "Digitalni Marketing",
+      readTime: "22 min",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 24,
       title: "Lokalni SEO za Mala Preduzeća - Kompletni Vodič za 2024. Godinu",
       excerpt: "Otkrijte kako da pozicionirate vaše lokalno preduzeće na vrh Google pretrage i privučete više kupaca iz vaše okoline. Google My Business, citacije, recenzije i napredne tehnike.",
