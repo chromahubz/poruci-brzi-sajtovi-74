@@ -4,8 +4,22 @@ import { Link } from "react-router-dom";
 import { Check, Clock, DollarSign, Zap, Monitor, Smartphone, ShoppingCart, Settings } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import LiquidEther from "@/components/LiquidEther";
+import BlurText from "@/components/BlurText";
+import LogoLoop from "@/components/LogoLoop";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiVercel, SiFigma, SiWordpress } from 'react-icons/si';
 
 const Home = () => {
+  const techLogos = [
+    { node: <SiReact className="text-[#61DAFB]" />, title: "React", href: "https://react.dev" },
+    { node: <SiNextdotjs className="text-black" />, title: "Next.js", href: "https://nextjs.org" },
+    { node: <SiTypescript className="text-[#3178C6]" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+    { node: <SiTailwindcss className="text-[#06B6D4]" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiNodedotjs className="text-[#339933]" />, title: "Node.js", href: "https://nodejs.org" },
+    { node: <SiVercel className="text-black" />, title: "Vercel", href: "https://vercel.com" },
+    { node: <SiFigma className="text-[#F24E1E]" />, title: "Figma", href: "https://figma.com" },
+    { node: <SiWordpress className="text-[#21759B]" />, title: "WordPress", href: "https://wordpress.org" },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -38,10 +52,13 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-white">Brza i jeftina</span>{" "}
-                  <span className="text-white font-extrabold">izrada sajtova</span>
-                </h1>
+                <BlurText
+                  text="Brza i jeftina izrada sajtova"
+                  delay={120}
+                  animateBy="words"
+                  direction="top"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
+                />
                 <p className="text-xl text-white/90 max-w-lg font-medium">
                   Profesionalne web stranice po pristupačnim cenama. Gotov sajt za 48 sati!
                 </p>
@@ -135,6 +152,26 @@ const Home = () => {
                 </CardDescription>
               </CardHeader>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Clients Section */}
+      <section className="py-8 px-4 bg-gradient-subtle">
+        <div className="container mx-auto">
+          <div style={{ height: '80px', position: 'relative', overflow: 'hidden' }}>
+            <LogoLoop
+              logos={techLogos}
+              speed={80}
+              direction="left"
+              logoHeight={36}
+              gap={60}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#f8fffe"
+              ariaLabel="Klijenti sa kojima radimo"
+            />
           </div>
         </div>
       </section>
