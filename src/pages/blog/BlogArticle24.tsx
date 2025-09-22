@@ -1632,7 +1632,7 @@ const BlogArticle24 = () => {
                       <div>
                         <h5 className="font-medium text-purple-700 mb-2">Tipični problemi:</h5>
                         <ul className="text-sm space-y-1 text-purple-600">
-                          <li>• Sporo učitavanje (>3s)</li>
+                          <li>• Sporo učitavanje (&gt;3s)</li>
                           <li>• Neresponsive design</li>
                           <li>• Teški za korišćenje dugmad</li>
                           <li>• Nedostaju click-to-call opcije</li>
