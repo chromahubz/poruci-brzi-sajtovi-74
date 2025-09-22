@@ -157,6 +157,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 23,
+      title: "Email Marketing za Mala Preduzeća - Kompletan Vodič za Gradnju Liste i Povećanje Prodaje 2025",
+      excerpt: "Kako da izgradite email listu od 0 do 5000+ pretplatnika, kreirate kampanje koje donose prodaju i automatizujete komunikaciju sa klijentima. Sve što trebate za uspešan email marketing u Srbiji.",
+      author: "Poruči Sajt Tim",
+      date: "28. februar 2025",
+      category: "Email Marketing",
+      readTime: "45 min",
+      image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 22,
       title: "Content Marketing za Mala Preduzeća - Kompletni Vodič kroz Kreiranje Sadržaja koji Prodaje 2025",
       excerpt: "Kako da kreirate sadržaj koji privlači prave klijente, gradi autoritet i povećava prodaju. Od strategije do realizacije - sve što trebate za uspešan content marketing u Srbiji.",
