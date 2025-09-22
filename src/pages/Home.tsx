@@ -14,10 +14,10 @@ const Home = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-foreground">Brza i jeftina</span>{" "}
-                  <span className="text-gradient-primary">izrada sajtova</span>
+                  <span className="text-gray-900">Brza i jeftina</span>{" "}
+                  <span className="text-gradient-primary font-extrabold">izrada sajtova</span>
                 </h1>
-                <p className="text-xl text-muted-foreground max-w-lg">
+                <p className="text-xl text-gray-700 max-w-lg font-medium">
                   Profesionalne web stranice po pristupačnim cenama. Gotov sajt za 48 sati!
                 </p>
               </div>
@@ -33,16 +33,16 @@ const Home = () => {
 
               <div className="flex items-center space-x-8 pt-4">
                 <div className="flex items-center space-x-2">
-                  <Clock className="text-primary w-5 h-5" />
-                  <span className="text-sm font-medium">48h isporuka</span>
+                  <Clock className="text-blue-600 w-5 h-5" />
+                  <span className="text-sm font-semibold text-gray-900">48h isporuka</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <DollarSign className="text-primary w-5 h-5" />
-                  <span className="text-sm font-medium">Od 50€</span>
+                  <DollarSign className="text-blue-600 w-5 h-5" />
+                  <span className="text-sm font-semibold text-gray-900">Od 50€</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Zap className="text-primary w-5 h-5" />
-                  <span className="text-sm font-medium">Brza podrška</span>
+                  <Zap className="text-blue-600 w-5 h-5" />
+                  <span className="text-sm font-semibold text-gray-900">Brza podrška</span>
                 </div>
               </div>
             </div>

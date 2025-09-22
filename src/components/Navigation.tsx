@@ -30,7 +30,7 @@ const Navigation = () => {
               alt="Poruci Sajt Logo"
               className="w-8 h-8 rounded-lg"
             />
-            <span className="font-bold text-xl text-gradient-accent">Poruci Sajt</span>
+            <span className="font-bold text-xl text-gray-900">Poruci Sajt</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,10 +39,10 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`font-medium transition-colors hover:text-primary ${
+                className={`font-medium transition-colors hover:text-blue-600 ${
                   isActive(item.href)
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "text-blue-600"
+                    : "text-gray-700"
                 }`}
               >
                 {item.label}
