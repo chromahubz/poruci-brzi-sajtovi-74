@@ -15,7 +15,7 @@ const BlogArticle26 = () => {
         "Samo digitalni proizvodi",
         "Samo uvozni proizvodi"
       ],
-      correct: 1,
+      correctAnswer: 1,
       explanation: "High-ticket dropshipping fokusira se na skupe proizvode (500€+) gde je profit po prodaji značajno veći."
     },
     {
@@ -26,7 +26,7 @@ const BlogArticle26 = () => {
         "Nasumični kreativni naziv",
         "Brojevi i simboli"
       ],
-      correct: 1,
+      correctAnswer: 1,
       explanation: "EMD strategija kombinuje lokaciju sa ključnom reči proizvoda (npr. beogradnameštaj.rs) za najbolje SEO rezultate."
     },
     {
@@ -37,7 +37,7 @@ const BlogArticle26 = () => {
         "20-50 sajtova",
         "100+ sajtova"
       ],
-      correct: 2,
+      correctAnswer: 2,
       explanation: "Optimalno je 20-50 mikrosajtova koji pokrivaju različite proizvode i lokacije, što omogućava dominaciju u pretragama."
     },
     {
@@ -48,7 +48,7 @@ const BlogArticle26 = () => {
         "500-5000€",
         "Zavisi od proizvoda"
       ],
-      correct: 2,
+      correctAnswer: 2,
       explanation: "High-ticket proizvodi omogućavaju profit od 500-5000€ po prodaji, što čini strategiju izuzetno profitabilnom."
     },
     {
@@ -59,7 +59,7 @@ const BlogArticle26 = () => {
         "Manje očekivanja",
         "Fokus samo na cenu"
       ],
-      correct: 1,
+      correctAnswer: 1,
       explanation: "Kupci skupih proizvoda imaju veća očekivanja za kvalitet, servis, garanciju i celokupno iskustvo."
     }
   ];
