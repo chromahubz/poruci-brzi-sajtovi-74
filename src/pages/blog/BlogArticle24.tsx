@@ -1137,9 +1137,9 @@ const BlogArticle24 = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="text-sm space-y-1">
-                      <li>• LCP &lt; 2.5s</li>
-                      <li>• FID &lt; 100ms</li>
-                      <li>• CLS &lt; 0.1</li>
+                      <li>• LCP {'<'} 2.5s</li>
+                      <li>• FID {'<'} 100ms</li>
+                      <li>• CLS {'<'} 0.1</li>
                       <li>• Redovno monitiranje</li>
                       <li>• PageSpeed optimizacija</li>
                     </ul>
@@ -1632,7 +1632,7 @@ const BlogArticle24 = () => {
                       <div>
                         <h5 className="font-medium text-purple-700 mb-2">Tipični problemi:</h5>
                         <ul className="text-sm space-y-1 text-purple-600">
-                          <li>• Sporo učitavanje (&gt;3s)</li>
+                          <li>• Sporo učitavanje ({'>'} 3s)</li>
                           <li>• Neresponsive design</li>
                           <li>• Teški za korišćenje dugmad</li>
                           <li>• Nedostaju click-to-call opcije</li>
