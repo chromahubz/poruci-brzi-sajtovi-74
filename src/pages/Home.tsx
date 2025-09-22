@@ -3,13 +3,38 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link } from "react-router-dom";
 import { Check, Clock, DollarSign, Zap, Monitor, Smartphone, ShoppingCart, Settings } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import LiquidEther from "@/components/LiquidEther";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-accent overflow-hidden">
-        <div className="container mx-auto">
+      <section className="relative py-20 px-4 overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-accent"></div>
+
+        {/* LiquidEther Overlay */}
+        <div className="absolute inset-0 z-10">
+          <LiquidEther
+            colors={['#0EA5E9', '#06B6D4', '#10B981', '#3B82F6']}
+            mouseForce={25}
+            cursorSize={120}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.7}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.3}
+            autoIntensity={1.8}
+            takeoverDuration={0.25}
+            autoResumeDelay={4000}
+            autoRampDuration={0.8}
+          />
+        </div>
+
+        <div className="container mx-auto relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
@@ -21,7 +46,7 @@ const Home = () => {
                   Profesionalne web stranice po pristupačnim cenama. Gotov sajt za 48 sati!
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
                   <Link to="/kontakt">Poruči sajt sada</Link>
@@ -47,10 +72,10 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Profesionalna izrada sajtova" 
+            <div className="relative z-20">
+              <img
+                src={heroImage}
+                alt="Profesionalna izrada sajtova"
                 className="rounded-2xl shadow-elegant w-full h-auto"
               />
             </div>
@@ -161,13 +186,37 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-primary text-primary-foreground">
-        <div className="container mx-auto text-center">
+      <section className="relative py-20 px-4 text-primary-foreground overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-primary"></div>
+
+        {/* LiquidEther Overlay */}
+        <div className="absolute inset-0 z-10">
+          <LiquidEther
+            colors={['#0EA5E9', '#06B6D4', '#10B981', '#3B82F6']}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.6}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.4}
+            autoIntensity={1.5}
+            takeoverDuration={0.25}
+            autoResumeDelay={3500}
+            autoRampDuration={0.7}
+          />
+        </div>
+
+        <div className="container mx-auto text-center relative z-20">
           <div className="space-y-6 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Spremni ste za novi sajt?
             </h2>
-            <p className="text-lg opacity-90">
+            <p className="text-lg text-white/90">
               Kontaktirajte nas danas i dobijte besplatnu konsultaciju. Vaš novi sajt može biti spreman za 48 sati!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -133,6 +133,25 @@ All colors MUST be HSL.
     background: var(--gradient-subtle);
   }
 
+  /* Animated background gradient */
+  .bg-gradient-accent-animated {
+    background: linear-gradient(135deg,
+      hsl(210 100% 50%),
+      hsl(180 90% 45%),
+      hsl(150 100% 40%),
+      hsl(120 90% 45%),
+      hsl(210 100% 50%)
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+
+  .bg-gradient-accent-animated:hover {
+    background-size: 400% 400%;
+    animation: gradientShift 2s ease-in-out infinite;
+  }
+
   /* Gradient text utility with better contrast */
   .text-gradient-primary {
     background: linear-gradient(135deg, hsl(200 90% 35%), hsl(160 70% 30%));
@@ -160,5 +179,42 @@ All colors MUST be HSL.
   /* Smooth transitions */
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  /* Animated gradient text with color shifting on hover */
+  .text-gradient-animated {
+    background: linear-gradient(135deg,
+      hsl(200 90% 35%),
+      hsl(180 70% 40%),
+      hsl(160 70% 30%),
+      hsl(140 80% 35%),
+      hsl(200 90% 35%)
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+
+  .text-gradient-animated:hover {
+    background-size: 400% 400%;
+    animation: gradientShift 1.5s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 30%;
+    }
+    50% {
+      background-position: 100% 70%;
+    }
+    75% {
+      background-position: 0% 70%;
+    }
   }
 }
