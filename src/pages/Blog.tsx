@@ -167,6 +167,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 26,
+      title: "E-commerce Mikrosajtovi: High-Ticket Dropshipping Strategija za Srpske Biznise 2025",
+      excerpt: "Otkrijte naprednu strategiju e-commerce mikrosajtova koja omogućava prodaju visoko-vrednih proizvoda sa 300-500% profit maržama. Kompletni vodič kroz partnerstva sa lokalnim proizvođačima i AI automatizaciju.",
+      author: "Poruči Sajt Tim",
+      date: "22. septembar 2024",
+      category: "E-commerce",
+      readTime: "28 min",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 24,
       title: "Lokalni SEO za Mala Preduzeća - Kompletni Vodič za 2024. Godinu",
       excerpt: "Otkrijte kako da pozicionirate vaše lokalno preduzeće na vrh Google pretrage i privučete više kupaca iz vaše okoline. Google My Business, citacije, recenzije i napredne tehnike.",
