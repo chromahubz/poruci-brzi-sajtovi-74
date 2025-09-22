@@ -157,6 +157,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 22,
+      title: "Content Marketing za Mala Preduzeća - Kompletni Vodič kroz Kreiranje Sadržaja koji Prodaje 2025",
+      excerpt: "Kako da kreirate sadržaj koji privlači prave klijente, gradi autoritet i povećava prodaju. Od strategije do realizacije - sve što trebate za uspešan content marketing u Srbiji.",
+      author: "Poruči Sajt Tim",
+      date: "25. februar 2025",
+      category: "Content Marketing",
+      readTime: "42 min",
+      image: "https://images.unsplash.com/photo-1542435503-956c469947f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 21,
       title: "Marketing Automation za Mala Preduzeća - Kompletni Vodič kroz Automatizaciju koja Povećava Prodaju 2025",
       excerpt: "Kako da automatizujete marketing procese i uštedite 30+ sati mesečno dok povećavate konverzije za 50%. Od email automation do kompleksnih customer journeys - sve što trebate za uspešnu automatizaciju.",
