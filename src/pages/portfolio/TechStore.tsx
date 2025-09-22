@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,6 +6,21 @@ import { Input } from "@/components/ui/input";
 import { ShoppingCart, Star, Truck, Shield, CreditCard, Search, Filter, Heart, Eye } from "lucide-react";
 
 const TechStore = () => {
+  // Load Inter font for modern tech feel
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    // Apply font to body for this page
+    document.body.style.fontFamily = '"Inter", sans-serif';
+
+    return () => {
+      document.body.style.fontFamily = '';
+      document.head.removeChild(link);
+    };
+  }, []);
   const categories = [
     { name: "Laptopovi", count: 45, icon: "💻" },
     { name: "Telefoni", count: 78, icon: "📱" },

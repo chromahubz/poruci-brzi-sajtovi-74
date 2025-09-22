@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,6 +6,21 @@ import { Separator } from "@/components/ui/separator";
 import { Scale, Users, Calendar, Award, Phone, Mail, MapPin, Clock, CheckCircle, Star } from "lucide-react";
 
 const AdvokatskaPetrovic = () => {
+  // Load Merriweather font for professional law firm feel
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    // Apply font to body for this page
+    document.body.style.fontFamily = '"Merriweather", "Open Sans", serif';
+
+    return () => {
+      document.body.style.fontFamily = '';
+      document.head.removeChild(link);
+    };
+  }, []);
   const services = [
     {
       title: "Građansko pravo",

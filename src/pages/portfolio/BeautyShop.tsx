@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,6 +6,21 @@ import { Input } from "@/components/ui/input";
 import { Heart, ShoppingBag, Star, Sparkles, Truck, Shield, Gift, Search, Filter, Eye } from "lucide-react";
 
 const BeautyShop = () => {
+  // Load Poppins font for modern beauty feel
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    // Apply font to body for this page
+    document.body.style.fontFamily = '"Poppins", sans-serif';
+
+    return () => {
+      document.body.style.fontFamily = '';
+      document.head.removeChild(link);
+    };
+  }, []);
   const categories = [
     { name: "Lice", count: 234, color: "bg-pink-100 text-pink-800" },
     { name: "Telo", count: 167, color: "bg-purple-100 text-purple-800" },

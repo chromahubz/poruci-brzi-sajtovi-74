@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +23,21 @@ import {
 } from "lucide-react";
 
 const FitnessPro = () => {
+  // Load Roboto font for fitness app feel
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    // Apply font to body for this page
+    document.body.style.fontFamily = '"Roboto", "Roboto Condensed", sans-serif';
+
+    return () => {
+      document.body.style.fontFamily = '';
+      document.head.removeChild(link);
+    };
+  }, []);
   const features = [
     {
       icon: Dumbbell,

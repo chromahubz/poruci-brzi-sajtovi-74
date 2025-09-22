@@ -1,9 +1,25 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Star, Utensils, Wine, ChefHat } from "lucide-react";
 
 const RestoranVila = () => {
+  // Load Playfair Display font for elegant restaurant feel
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    // Apply font to body for this page
+    document.body.style.fontFamily = '"Playfair Display", "Source Sans Pro", serif';
+
+    return () => {
+      document.body.style.fontFamily = '';
+      document.head.removeChild(link);
+    };
+  }, []);
   const menuItems = [
     {
       category: "Predjela",
