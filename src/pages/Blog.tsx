@@ -157,6 +157,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 24,
+      title: "Lokalni SEO za Mala Preduzeća - Kompletni Vodič za 2024. Godinu",
+      excerpt: "Otkrijte kako da pozicionirate vaše lokalno preduzeće na vrh Google pretrage i privučete više kupaca iz vaše okoline. Google My Business, citacije, recenzije i napredne tehnike.",
+      author: "Poruči Sajt Tim",
+      date: "22. septembar 2024",
+      category: "Lokalni SEO",
+      readTime: "25 min",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 23,
       title: "Email Marketing za Mala Preduzeća - Kompletan Vodič za Gradnju Liste i Povećanje Prodaje 2025",
       excerpt: "Kako da izgradite email listu od 0 do 5000+ pretplatnika, kreirate kampanje koje donose prodaju i automatizujete komunikaciju sa klijentima. Sve što trebate za uspešan email marketing u Srbiji.",
