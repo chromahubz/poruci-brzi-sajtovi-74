@@ -157,6 +157,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 21,
+      title: "Marketing Automation za Mala Preduzeća - Kompletni Vodič kroz Automatizaciju koja Povećava Prodaju 2025",
+      excerpt: "Kako da automatizujete marketing procese i uštedite 30+ sati mesečno dok povećavate konverzije za 50%. Od email automation do kompleksnih customer journeys - sve što trebate za uspešnu automatizaciju.",
+      author: "Poruči Sajt Tim",
+      date: "22. februar 2025",
+      category: "Marketing Automation",
+      readTime: "38 min",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 20,
       title: "Video Marketing za Mala Preduzeća - Kompletni Vodič za Kreiranje Sadržaja koji Prodaje 2025",
       excerpt: "Kako da kreirate video sadržaj koji privlači klijente i povećava prodaju. Od strategije do produkcije - sve što trebate da znate o video marketing-u za srpska mala preduzeća.",
@@ -164,7 +174,7 @@ const Blog = () => {
       date: "20. februar 2025",
       category: "Video Marketing",
       readTime: "35 min",
-      image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
       id: 19,
