@@ -268,7 +268,7 @@ const BlogArticle26 = () => {
                 </Card>
               </div>
 
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
+              <div className="bg-white border-l-4 border-blue-400 p-6 mb-8">
                 <div className="flex items-start space-x-3">
                   <Lightbulb className="w-6 h-6 text-yellow-600 mt-1" />
                   <div>
@@ -1052,7 +1052,7 @@ const BlogArticle26 = () => {
 
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">A/B testing strategije za high-ticket</h3>
 
-              <div className="bg-yellow-50 p-6 rounded-xl mb-8">
+              <div className="bg-white p-6 rounded-xl mb-8 border border-gray-200">
                 <h4 className="font-semibold text-yellow-800 mb-4">Ključni elementi za testiranje:</h4>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -1205,7 +1205,7 @@ const BlogArticle26 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50">
+                <Card className="border-orange-200 bg-gradient-to-br from-orange-50 to-orange-100">
                   <CardHeader>
                     <CardTitle className="flex items-center text-orange-800">
                       <Users className="w-5 h-5 mr-2" />
@@ -1327,7 +1327,7 @@ const BlogArticle26 = () => {
                 </Card>
               </div>
 
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
+              <div className="bg-white border-l-4 border-blue-400 p-6 mb-8">
                 <div className="flex items-start space-x-3">
                   <Lightbulb className="w-6 h-6 text-yellow-600 mt-1" />
                   <div>
@@ -1353,7 +1353,7 @@ const BlogArticle26 = () => {
                     <CheckCircle className="w-4 h-4 mr-2" />
                     Započnite strategiju
                   </Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
+                  <Button variant="outline" className="border-gray-300 text-black hover:bg-gray-100 hover:text-orange-600">
                     <Share2 className="w-4 h-4 mr-2" />
                     Podelite članak
                   </Button>
@@ -1382,7 +1382,7 @@ const BlogArticle26 = () => {
                   <Phone className="w-5 h-5 mr-2" />
                   Zakažite strategiju call
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                <Button size="lg" variant="outline" className="border-gray-300 text-black hover:bg-gray-100 hover:text-blue-600">
                   <Mail className="w-5 h-5 mr-2" />
                   Pošaljite upit
                 </Button>
