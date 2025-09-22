@@ -8,13 +8,14 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Switch } from "@/components/ui/switch";
 import { Link } from "react-router-dom";
 import { Check, Star, Zap, Crown, Mail, Phone, User, MessageSquare } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Pricing = () => {
   const { toast } = useToast();
   const [open, setOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState(10 * 60); // 10 minutes in seconds
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,6 +31,10 @@ const Pricing = () => {
   const handlePlanSelect = (planIndex: number) => {
     setSelectedPlan(planIndex);
     setOpen(true);
+    // Reset timer to 10 minutes when opening modal for Osnovni Paket or Shop Start
+    if (planIndex === 0 || planIndex === 2) { // Osnovni Paket (0) or Shop Start (2)
+      setTimeLeft(10 * 60);
+    }
     // Reset form when opening modal
     setFormData({ name: "", email: "", phone: "", message: "", hasOwnMaterials: true, websiteText: "", colorPreferences: "", imageDescription: "", domainPreference: "" });
   };
@@ -50,6 +55,28 @@ const Pricing = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  // Timer countdown effect - only runs when modal is open and it's Osnovni Paket or Shop Start
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    if (open && (selectedPlan === 0 || selectedPlan === 2) && timeLeft > 0) {
+      interval = setInterval(() => {
+        setTimeLeft(prev => prev - 1);
+      }, 1000);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [open, selectedPlan, timeLeft]);
+
+  // Format time for display
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
+
   const getCurrentPrice = () => {
     if (selectedPlan === null) return 0;
     const basePlan = mainPlans[selectedPlan];
@@ -64,7 +91,7 @@ const Pricing = () => {
 
     // For Mikro Sajtovi, pricing depends on materials
     if (selectedPlan === 1) { // Mikro Sajtovi
-      return formData.hasOwnMaterials ? 200 : 500;
+      return formData.hasOwnMaterials ? 300 : 500;
     }
 
     return basePrice;
@@ -74,7 +101,7 @@ const Pricing = () => {
     {
       name: "Osnovni Paket",
       price: "50",
-      originalPrice: "100",
+      originalPrice: "200",
       description: "Idealno za manje biznise i startupe",
       icon: Zap,
       features: [
@@ -93,7 +120,7 @@ const Pricing = () => {
     },
     {
       name: "Mikro Sajtovi",
-      price: "200",
+      price: "300",
       description: "5 sajtova za cenu jednog",
       icon: Star,
       features: [
@@ -101,16 +128,21 @@ const Pricing = () => {
         "5 domena (.online/.store/\n.shop - 1 godina uključena)",
         "Limit poseta: do ~10.000 mesečno po sajtu",
         "Jednokratna isporuka, bez revizija",
-        "Idealno za više projekata"
+        "Idealno za preusmeravanje korisnika na glavni sajt",
+        <span>
+          <Link to="/blog/25" className="text-primary hover:underline font-medium">
+            Pročitaj više
+          </Link>
+        </span>
       ],
       popular: false,
       note: "500€ ako mi pišemo sadržaj (1 revizija po sajtu)",
-      renewal: "50€ po sajtu ili 200€ za svih 5"
+      renewal: "50€ po sajtu ili 300€ za svih 5"
     },
     {
       name: "Shop Start",
       price: "150",
-      originalPrice: "300",
+      originalPrice: "500",
       description: "Osnovna online prodavnica", 
       icon: Crown,
       features: [
@@ -130,7 +162,7 @@ const Pricing = () => {
     },
     {
       name: "Shop Pro",
-      price: "500",
+      price: "700",
       description: "Napredna online prodavnica za ozbiljan biznis",
       icon: Crown,
       features: [
@@ -150,7 +182,7 @@ const Pricing = () => {
     {
       name: "Auto Blog",
       price: "200",
-      description: "Blog piše relevantan sadržaj i na svakoj objavi preusmerava na vaš glavni sajt",
+      description: "Blog koji preusmerava na vaš glavni sajt",
       icon: Star,
       features: [
         "Automatsko kreiranje postova",
@@ -358,11 +390,11 @@ const Pricing = () => {
               <CardHeader>
                 <CardTitle className="text-xl">Standardna obnova</CardTitle>
                 <div className="flex items-center justify-center gap-2">
-                  <span className="line-through text-muted-foreground text-2xl">€100</span>
+                  <span className="line-through text-muted-foreground text-2xl">€200</span>
                   <span className="text-3xl font-bold text-primary">€50</span>
                 </div>
                 <div className="text-sm text-destructive font-medium mt-1">
-                  🎉 Promo cena samo do kraja meseca!
+                  ⚡ Limitirana ponuda - cena ostaje zauvek za one koji kupe u ovom periodu!
                 </div>
                 <CardDescription>
                   Nastavak domene i hostinga
@@ -500,6 +532,24 @@ const Pricing = () => {
             <DialogDescription>
               Popunite formu i kontaktiraćemo vas u najkraćem roku
             </DialogDescription>
+
+            {/* Show timer for Osnovni Paket and Shop Start */}
+            {(selectedPlan === 0 || selectedPlan === 2) && (
+              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4 mt-4">
+                <div className="flex items-center justify-center space-x-2">
+                  <span className="text-destructive font-semibold">⏰ Promo cena ističe za:</span>
+                  <div className="bg-destructive text-destructive-foreground px-3 py-1 rounded-md font-mono text-lg font-bold">
+                    {formatTime(timeLeft)}
+                  </div>
+                </div>
+                <p className="text-center text-sm text-destructive/80 mt-2">
+                  {selectedPlan === 0
+                    ? "Iskoristite limitiranu ponudu od 50€ umesto redovne cene od 200€!"
+                    : "Iskoristite limitiranu ponudu od 150€ umesto redovne cene od 500€!"
+                  }
+                </p>
+              </div>
+            )}
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6">

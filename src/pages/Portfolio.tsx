@@ -127,10 +127,47 @@ const Portfolio = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button variant="secondary" size="sm">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Pogledaj sajt
-                    </Button>
+                    {project.title === "Restoran Vila" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/restoran-vila">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "TechStore" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/techstore">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "Advokatska kancelarija Petrović" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/advokatska-petrovic">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "BeautyShop" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/beautyshop">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "FitnessPro" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/fitnesspro">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj app
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button variant="secondary" size="sm">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Pogledaj sajt
+                      </Button>
+                    )}
                   </div>
                 </div>
                 <CardHeader>

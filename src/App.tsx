@@ -40,6 +40,17 @@ import BlogArticle23 from "./pages/blog/BlogArticle23";
 import BlogArticle24 from "./pages/blog/BlogArticle24";
 import BlogArticle25 from "./pages/blog/BlogArticle25";
 import BlogArticle26 from "./pages/blog/BlogArticle26";
+import WebDevelopment from "./pages/services/WebDevelopment";
+import WebDesign from "./pages/services/WebDesign";
+import Ecommerce from "./pages/services/Ecommerce";
+import Maintenance from "./pages/services/Maintenance";
+import MobileApps from "./pages/services/MobileApps";
+import SEOOptimization from "./pages/services/SEOOptimization";
+import RestoranVila from "./pages/portfolio/RestoranVila";
+import TechStore from "./pages/portfolio/TechStore";
+import AdvokatskaPetrovic from "./pages/portfolio/AdvokatskaPetrovic";
+import BeautyShop from "./pages/portfolio/BeautyShop";
+import FitnessPro from "./pages/portfolio/FitnessPro";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +79,12 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/o-nama" element={<About />} />
               <Route path="/usluge" element={<Services />} />
+              <Route path="/usluge/izrada-sajtova" element={<WebDevelopment />} />
+              <Route path="/usluge/web-dizajn" element={<WebDesign />} />
+              <Route path="/usluge/e-commerce" element={<Ecommerce />} />
+              <Route path="/usluge/odrzavanje-sajtova" element={<Maintenance />} />
+              <Route path="/usluge/mobilne-aplikacije" element={<MobileApps />} />
+              <Route path="/usluge/seo-optimizacija" element={<SEOOptimization />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/cene" element={<Pricing />} />
               <Route path="/blog" element={<Blog />} />
@@ -97,6 +114,11 @@ const App = () => (
               <Route path="/blog/24" element={<BlogArticle24 />} />
               <Route path="/blog/25" element={<BlogArticle25 />} />
               <Route path="/blog/26" element={<BlogArticle26 />} />
+              <Route path="/portfolio/restoran-vila" element={<RestoranVila />} />
+              <Route path="/portfolio/techstore" element={<TechStore />} />
+              <Route path="/portfolio/advokatska-petrovic" element={<AdvokatskaPetrovic />} />
+              <Route path="/portfolio/beautyshop" element={<BeautyShop />} />
+              <Route path="/portfolio/fitnesspro" element={<FitnessPro />} />
               <Route path="/kontakt" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

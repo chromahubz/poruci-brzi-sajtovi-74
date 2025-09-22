@@ -22,37 +22,43 @@ const Services = () => {
       title: "Kreiranje web sajtova",
       description: "Moderni, responzivni sajtovi prilagođeni vašim potrebama",
       features: ["Responzivan dizajn", "SEO optimizacija", "Brzo učitavanje", "Mobile-first pristup"],
-      popular: true
+      popular: true,
+      link: "/usluge/izrada-sajtova"
     },
     {
       icon: ShoppingCart,
       title: "E-commerce rešenja",
       description: "Kompletne online prodavnice sa sistemom plaćanja",
-      features: ["Shopping cart", "Integracija plaćanja", "Upravljanje inventarom", "Analytics"]
+      features: ["Shopping cart", "Integracija plaćanja", "Upravljanje inventarom", "Analytics"],
+      link: "/usluge/e-commerce"
     },
     {
       icon: Smartphone,
       title: "Mobilne aplikacije",
       description: "Web aplikacije optimizovane za mobilne uređaje",
-      features: ["PWA tehnologija", "Offline pristup", "Push notifikacije", "App store ready"]
+      features: ["PWA tehnologija", "Offline pristup", "Push notifikacije", "App store ready"],
+      link: "/usluge/mobilne-aplikacije"
     },
     {
       icon: Search,
       title: "SEO optimizacija",
       description: "Poboljšanje pozicije na Google pretragama",
-      features: ["Keyword research", "On-page SEO", "Technical SEO", "Performance optimizacija"]
+      features: ["Keyword research", "On-page SEO", "Technical SEO", "Performance optimizacija"],
+      link: "/usluge/seo-optimizacija"
     },
     {
       icon: Settings,
       title: "Održavanje sajtova",
       description: "Redovno ažuriranje i tehnička podrška",
-      features: ["24/7 monitoring", "Security updates", "Backup servisi", "Performance tuning"]
+      features: ["24/7 monitoring", "Security updates", "Backup servisi", "Performance tuning"],
+      link: "/usluge/odrzavanje-sajtova"
     },
     {
       icon: Palette,
       title: "Web dizajn",
       description: "Kreativni dizajn koji privlači pažnju",
-      features: ["UI/UX dizajn", "Brand identitet", "Wireframing", "Prototyping"]
+      features: ["UI/UX dizajn", "Brand identitet", "Wireframing", "Prototyping"],
+      link: "/usluge/web-dizajn"
     }
   ];
 
@@ -115,7 +121,7 @@ const Services = () => {
                   <CardTitle>{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-2">
@@ -124,6 +130,11 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
+                  {service.link && (
+                    <Button asChild className="w-full">
+                      <Link to={service.link}>Saznaj više</Link>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}

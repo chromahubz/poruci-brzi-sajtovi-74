@@ -6,6 +6,7 @@ import heroImage from "@/assets/hero-image.jpg";
 import LiquidEther from "@/components/LiquidEther";
 import BlurText from "@/components/BlurText";
 import LogoLoop from "@/components/LogoLoop";
+import GradualBlur from "@/components/GradualBlur";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiVercel, SiFigma, SiWordpress } from 'react-icons/si';
 
 const Home = () => {
@@ -47,6 +48,7 @@ const Home = () => {
             autoRampDuration={0.8}
           />
         </div>
+
 
         <div className="container mx-auto relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -248,6 +250,7 @@ const Home = () => {
           />
         </div>
 
+
         <div className="container mx-auto text-center relative z-20">
           <div className="space-y-6 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -267,6 +270,16 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Global Bottom Blur Effect */}
+      <GradualBlur
+        preset="bottom"
+        strength={1}
+        height="3rem"
+        target="page"
+        animated={true}
+        className="pointer-events-none"
+      />
     </div>
   );
 };

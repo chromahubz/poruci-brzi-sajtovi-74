@@ -63,10 +63,26 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Usluge</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground text-sm">Izrada sajtova</li>
-              <li className="text-muted-foreground text-sm">Web dizajn</li>
-              <li className="text-muted-foreground text-sm">E-commerce</li>
-              <li className="text-muted-foreground text-sm">Održavanje sajtova</li>
+              <li>
+                <Link to="/usluge/izrada-sajtova" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Izrada sajtova
+                </Link>
+              </li>
+              <li>
+                <Link to="/usluge/web-dizajn" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Web dizajn
+                </Link>
+              </li>
+              <li>
+                <Link to="/usluge/e-commerce" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  E-commerce
+                </Link>
+              </li>
+              <li>
+                <Link to="/usluge/odrzavanje-sajtova" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Održavanje sajtova
+                </Link>
+              </li>
             </ul>
           </div>
 
