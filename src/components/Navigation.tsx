@@ -20,7 +20,7 @@ const Navigation = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <nav className="bg-gradient-subtle border-b border-border sticky top-0 z-50 shadow-soft">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -30,7 +30,7 @@ const Navigation = () => {
               alt="Poruci Sajt Logo"
               className="w-8 h-8 rounded-lg"
             />
-            <span className="font-bold text-xl text-foreground">Poruci Sajt</span>
+            <span className="font-bold text-xl text-gradient-accent">Poruci Sajt</span>
           </Link>
 
           {/* Desktop Navigation */}

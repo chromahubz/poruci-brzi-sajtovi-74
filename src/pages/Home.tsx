@@ -8,14 +8,14 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-secondary overflow-hidden">
+      <section className="relative py-20 px-4 bg-gradient-accent overflow-hidden">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Brza i jeftina{" "}
-                  <span className="text-primary">izrada sajtova</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  <span className="text-foreground">Brza i jeftina</span>{" "}
+                  <span className="text-gradient-primary">izrada sajtova</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
                   Profesionalne web stranice po pristupačnim cenama. Gotov sajt za 48 sati!
