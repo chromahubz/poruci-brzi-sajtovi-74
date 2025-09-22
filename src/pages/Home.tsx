@@ -175,7 +175,7 @@ const Home = () => {
                 <Link to="/kontakt">Kontaktiraj nas</Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 border-white text-white bg-white/10 hover:bg-white/20">
-                <Link to="/cene">Pogledaj cene</Link>
+                <Link to="/cene" className="text-white">Pogledaj cene</Link>
               </Button>
             </div>
           </div>
