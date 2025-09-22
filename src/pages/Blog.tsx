@@ -157,6 +157,16 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 20,
+      title: "Video Marketing za Mala Preduzeća - Kompletni Vodič za Kreiranje Sadržaja koji Prodaje 2025",
+      excerpt: "Kako da kreirate video sadržaj koji privlači klijente i povećava prodaju. Od strategije do produkcije - sve što trebate da znate o video marketing-u za srpska mala preduzeća.",
+      author: "Poruči Sajt Tim",
+      date: "20. februar 2025",
+      category: "Video Marketing",
+      readTime: "35 min",
+      image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 19,
       title: "Cybersecurity za Mala Preduzeća - Kompletni Vodič kroz Zaštitu u Digitalnom Svetu 2025",
       excerpt: "Kako da zaštitite svoje preduzeće od cyber napada koji mogu da koštaju milione dinara. Praktični vodič sa konkretnim koracima, alatima i strategijama za potpunu cyber zaštitu.",
