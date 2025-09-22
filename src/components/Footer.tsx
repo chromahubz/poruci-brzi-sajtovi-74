@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PS</span>
-              </div>
+              <img
+                src="/porucisajt192x192.png"
+                alt="Poruci Sajt Logo"
+                className="w-8 h-8 rounded-lg"
+              />
               <span className="font-bold text-xl text-foreground">Poruci Sajt</span>
             </div>
             <p className="text-muted-foreground text-sm">
