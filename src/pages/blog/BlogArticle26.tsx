@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ShoppingCart, Search, Target, TrendingUp, BarChart3, Users, Building2, CheckCircle, AlertCircle, Smartphone, Calendar, Award, Zap, Eye, MousePointer, DollarSign, Share2, MessageCircle, ThumbsUp, BookOpen, ChevronRight, PlusCircle, Settings, Filter, Map, Route, Flag, Home, Store, Briefcase, UserCheck, ShieldCheck, CreditCard, Lock, Truck, Package, Mail, Bell, Wifi, Headphones, Monitor, Database, Clock, Star, MapPin, Phone, Lightbulb, ExternalLink, FileText, Camera, Heart, ShoppingBag, Coffee, Car, Navigation, Compass, Globe, Factory, Hammer, Wrench, Palette, TreePine, Sofa, Laptop, Sun, Wind, Droplets, Shield, Gem, Crown, Coins, Calculator, LineChart, Percent, Repeat, ArrowUpRight, ArrowDownRight, TrendingDown, BarChart, PieChart, Activity } from "lucide-react";
+import { ArrowLeft, ArrowRight, ShoppingCart, Target, TrendingUp, BarChart3, Users, Building2, CheckCircle, Calendar, Award, Zap, Eye, MousePointer, DollarSign, Share2, Settings, Phone, Lightbulb, Globe, Palette, Sofa, Sun, Crown, Coins, Percent, Repeat, Clock, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import Quiz from "@/components/Quiz";
 
