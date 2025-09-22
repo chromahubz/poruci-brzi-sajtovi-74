@@ -79,7 +79,7 @@ const Pricing = () => {
       icon: Zap,
       features: [
         "1 strana sa sekcijama ili do 3 manje strane",
-        "Domen (.online/.store/.shop) na 1 godinu",
+        "Domen (.online/.store/\n.shop) na 1 godinu",
         "Hosting uključen – do ~10.000 poseta mesečno",
         "Responzivan dizajn (mobilni/desktop)",
         "Osnovna SEO optimizacija (meta podaci, favicon)",
@@ -98,7 +98,7 @@ const Pricing = () => {
       icon: Star,
       features: [
         "5 manjih sajtova (do 2 strane po sajtu)",
-        "5 domena (.online/.store/.shop - 1 godina uključena)",
+        "5 domena (.online/.store/\n.shop - 1 godina uključena)",
         "Limit poseta: do ~10.000 mesečno po sajtu",
         "Jednokratna isporuka, bez revizija",
         "Idealno za više projekata"

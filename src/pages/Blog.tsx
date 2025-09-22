@@ -115,6 +115,86 @@ const Blog = () => {
       category: "Conversion Optimization",
       readTime: "16 min",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 12,
+      title: "Email Marketing za Male Biznise - ROI od 4200% Kroz Automatizovane Email Sekvence",
+      excerpt: "Kompletni vodič za email marketing strategije koje donose rezultate. Automatizovane sekvence, A/B testiranje i alati za povećanje prodaje.",
+      author: "Poruči Sajt Tim",
+      date: "30. januar 2025",
+      category: "Email Marketing",
+      readTime: "18 min",
+      image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 13,
+      title: "Online vs Offline Marketing - Kompletno Poređenje za Mala Preduzeća u Srbiji 2025",
+      excerpt: "Detaljno poređenje online i offline marketing strategija sa praktičnim savetima za kombinovani pristup koji maksimizuje ROI.",
+      author: "Poruči Sajt Tim",
+      date: "2. februar 2025",
+      category: "Marketing Strategije",
+      readTime: "20 min",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 14,
+      title: "Local SEO za Srpske Biznise - Kako Biti Prvi na Google Maps u 2025",
+      excerpt: "Kompletni vodič kroz Local SEO optimizaciju za mala preduzeća u Srbiji. Google My Business, lokalne recenzije, citati i sve što trebate za dominaciju lokalnih pretarga.",
+      author: "Poruči Sajt Tim",
+      date: "5. februar 2025",
+      category: "Lokalni SEO",
+      readTime: "22 min",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 15,
+      title: "WordPress vs Custom Sajt - Kompletno Poređenje za Srpske Biznise 2025",
+      excerpt: "Detaljno poređenje WordPress-a i custom rešenja sa realnim troškovima, performansama i preporukama za različite tipove biznisa u Srbiji.",
+      author: "Poruči Sajt Tim",
+      date: "8. februar 2025",
+      category: "Web Development",
+      readTime: "24 min",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 19,
+      title: "Cybersecurity za Mala Preduzeća - Kompletni Vodič kroz Zaštitu u Digitalnom Svetu 2025",
+      excerpt: "Kako da zaštitite svoje preduzeće od cyber napada koji mogu da koštaju milione dinara. Praktični vodič sa konkretnim koracima, alatima i strategijama za potpunu cyber zaštitu.",
+      author: "Poruči Sajt Tim",
+      date: "18. februar 2025",
+      category: "Cybersecurity",
+      readTime: "32 min",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 18,
+      title: "Branding za Mala Preduzeća - Kompletni Vodič kroz Brand Identitet u Srbiji 2025",
+      excerpt: "Kako da izgradite snažan brend koji se izdvaja od konkurencije, privlači prave klijente i omogućava veće cene. Praktičan vodič sa konkretnim primerima i korak-po-korak instrukcijama.",
+      author: "Poruči Sajt Tim",
+      date: "15. februar 2025",
+      category: "Branding",
+      readTime: "28 min",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 17,
+      title: "Google Analytics za Početnike - Kompletni GA4 Vodič za Srpske Biznise 2025",
+      excerpt: "Kompletni vodič kroz Google Analytics 4. Naučite kako da instalirate, podešavate i koristite GA4 za praćenje poseta, analizu saobraćaja i povećanje konverzija na vašem sajtu.",
+      author: "Poruči Sajt Tim",
+      date: "12. februar 2025",
+      category: "Analytics",
+      readTime: "25 min",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 16,
+      title: "Kako Pisati Sadržaj Koji Prodaje - Copywriting Vodič za Srpske Biznise 2025",
+      excerpt: "Kompletni vodič kroz copywriting tehnike koje stvarno funkcionišu. Od psihologije kupaca do konkretnih formula za naslove, opise i call-to-action pozive.",
+      author: "Poruči Sajt Tim",
+      date: "10. februar 2025",
+      category: "Copywriting",
+      readTime: "26 min",
+      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     }
   ];
 

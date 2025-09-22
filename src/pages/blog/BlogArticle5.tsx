@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, TrendingUp, Users, Globe, CheckCircle, Star, Clock, Eye, BarChart, Gauge, Image, Smartphone, Wifi } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Quiz } from "@/components/Quiz";
+import Quiz from "@/components/Quiz";
 
 const BlogArticle5 = () => {
   return (

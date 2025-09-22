@@ -25,6 +25,14 @@ import BlogArticle8 from "./pages/blog/BlogArticle8";
 import BlogArticle9 from "./pages/blog/BlogArticle9";
 import BlogArticle10 from "./pages/blog/BlogArticle10";
 import BlogArticle11 from "./pages/blog/BlogArticle11";
+import BlogArticle12 from "./pages/blog/BlogArticle12";
+import BlogArticle13 from "./pages/blog/BlogArticle13";
+import BlogArticle14 from "./pages/blog/BlogArticle14";
+import BlogArticle15 from "./pages/blog/BlogArticle15";
+import BlogArticle16 from "./pages/blog/BlogArticle16";
+import BlogArticle17 from "./pages/blog/BlogArticle17";
+import BlogArticle18 from "./pages/blog/BlogArticle18";
+import BlogArticle19 from "./pages/blog/BlogArticle19";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +75,14 @@ const App = () => (
               <Route path="/blog/9" element={<BlogArticle9 />} />
               <Route path="/blog/10" element={<BlogArticle10 />} />
               <Route path="/blog/11" element={<BlogArticle11 />} />
+              <Route path="/blog/12" element={<BlogArticle12 />} />
+              <Route path="/blog/13" element={<BlogArticle13 />} />
+              <Route path="/blog/14" element={<BlogArticle14 />} />
+              <Route path="/blog/15" element={<BlogArticle15 />} />
+              <Route path="/blog/16" element={<BlogArticle16 />} />
+              <Route path="/blog/17" element={<BlogArticle17 />} />
+              <Route path="/blog/18" element={<BlogArticle18 />} />
+              <Route path="/blog/19" element={<BlogArticle19 />} />
               <Route path="/kontakt" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

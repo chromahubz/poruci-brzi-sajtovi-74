@@ -96,8 +96,8 @@ const BlogArticle10 = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl">
-              Otkrijte kako blog može da transformiše vaš biznis u authority u vašoj oblasti i dovede kontinuirani tok
-              novih klijenata kroz organsko rangiranje i preporuke. Praktični vodič za pokretanje content strategije.
+              Otkrijte kako blog može da transformiše vaš biznis u autoritet u vašoj oblasti i dovede kontinuirani tok
+              novih klijenata kroz organsko rangiranje i preporuke. Praktični vodič za pokretanje strategije sadržaja.
             </p>
           </div>
         </div>
@@ -129,11 +129,11 @@ const BlogArticle10 = () => {
               <div className="bg-secondary p-6 rounded-lg">
                 <h4 className="font-semibold mb-3">Moć specijalizovanog blog-a:</h4>
                 <ul className="space-y-2">
-                  <li>• <strong>Authority building:</strong> Postajete poznati stručnjak u svojoj oblasti</li>
+                  <li>• <strong>Izgradnja autoriteta:</strong> Postajete poznati stručnjak u svojoj oblasti</li>
                   <li>• <strong>SEO dominacija:</strong> Google vas rangira bolje od konkurencije</li>
-                  <li>• <strong>Lead generation:</strong> Kontinuiran priliv zainteresovanih klijenata</li>
-                  <li>• <strong>Brand awareness:</strong> Ljudi se sećaju vašeg imena kada im treba usluga</li>
-                  <li>• <strong>Customer education:</strong> Edukovani klijenti su spremniji da plate više</li>
+                  <li>• <strong>Generiranje potencijalnih kupaca:</strong> Kontinuiran priliv zainteresovanih klijenata</li>
+                  <li>• <strong>Prepoznatljivost brenda:</strong> Ljudi se sećaju vašeg imena kada im treba usluga</li>
+                  <li>• <strong>Edukacija klijenata:</strong> Edukovani klijenti su spremniji da plate više</li>
                 </ul>
               </div>
             </CardContent>
@@ -150,10 +150,10 @@ const BlogArticle10 = () => {
             <CardContent className="space-y-6">
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Long-Tail Keywords Strategy</h3>
+                <h3 className="text-xl font-semibold mb-4">Strategija specifičnih ključnih reči</h3>
                 <p className="mb-4">
                   Dok se svi bore za ključne reči kao "web dizajn", vi možete da dominirate sa specifičnim frazama
-                  kao "kako napraviti responzivan sajt za restoran u Beogradu". Ove long-tail ključne reči imaju:
+                  kao "kako napraviti responzivan sajt za restoran u Beogradu". Ove specifične ključne reči imaju:
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-4">
@@ -165,7 +165,7 @@ const BlogArticle10 = () => {
                     </p>
                   </Card>
                   <Card className="p-4">
-                    <h4 className="font-semibold mb-2">Kvalitetniji Traffic</h4>
+                    <h4 className="font-semibold mb-2">Kvalitetniji saobraćaj</h4>
                     <p className="text-sm text-muted-foreground">
                       Ljudi koji pretražuju "najbolji dizajn sajta za zubarsku ordinaciju" su mnogo bliži kupovini
                       od onih koji pretražuju samo "web dizajn".
@@ -188,46 +188,46 @@ const BlogArticle10 = () => {
                   <Card className="p-4">
                     <h4 className="font-semibold mb-2">Case Study: Stomatološka Ordinacija</h4>
                     <div className="text-sm space-y-2">
-                      <p><strong>Strategy:</strong> Pisanje detaljnih članaka o dentalnim procedurama</p>
-                      <p><strong>Key articles:</strong> "Implanti zuba u Novom Sadu - cena i procedure", "Kako da se pripremite za vadenje zuba"</p>
-                      <p><strong>Results:</strong> 300% povećanje organskog traffic-a za 8 meseci, 40% novih pacijenata dolazi preko bloga</p>
+                      <p><strong>Strategija:</strong> Pisanje detaljnih članaka o dentalnim procedurama</p>
+                      <p><strong>Ključni članci:</strong> "Implanti zuba u Novom Sadu - cena i procedure", "Kako da se pripremite za vadenje zuba"</p>
+                      <p><strong>Rezultati:</strong> 300% povećanje organskog saobraćaja za 8 meseci, 40% novih pacijenata dolazi preko bloga</p>
                     </div>
                   </Card>
 
                   <Card className="p-4">
                     <h4 className="font-semibold mb-2">Case Study: IT Agencija</h4>
                     <div className="text-sm space-y-2">
-                      <p><strong>Strategy:</strong> Tehnički blog postovi o web development trendovima</p>
-                      <p><strong>Key articles:</strong> "React vs Vue - šta odabrati za vaš projekt 2024", "Koliko košta izrada e-commerce sajta"</p>
-                      <p><strong>Results:</strong> Pozicionirani kao technology leaders, 50% povećanje B2B inquiries</p>
+                      <p><strong>Strategija:</strong> Tehnički blog postovi o web development trendovima</p>
+                      <p><strong>Ključni članci:</strong> "React vs Vue - šta odabrati za vaš projekt 2024", "Koliko košta izrada e-commerce sajta"</p>
+                      <p><strong>Rezultati:</strong> Pozicionirani kao tehnološki lideri, 50% povećanje B2B upita</p>
                     </div>
                   </Card>
 
                   <Card className="p-4">
                     <h4 className="font-semibold mb-2">Case Study: Frizerski Salon</h4>
                     <div className="text-sm space-y-2">
-                      <p><strong>Strategy:</strong> Hair care saveti i trend articles</p>
-                      <p><strong>Key articles:</strong> "Najbolje frizure za okruglo lice", "Kako negovati kosu tokom zime"</p>
-                      <p><strong>Results:</strong> Instagram pratilaca +500%, bookings preko bloga +200%</p>
+                      <p><strong>Strategija:</strong> Saveti za negu kose i trendovski članci</p>
+                      <p><strong>Ključni članci:</strong> "Najbolje frizure za okruglo lice", "Kako negovati kosu tokom zime"</p>
+                      <p><strong>Rezultati:</strong> Instagram pratilaca +500%, rezervacije preko bloga +200%</p>
                     </div>
                   </Card>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Featured Snippets i Voice Search Optimizacija</h3>
+                <h3 className="text-xl font-semibold mb-4">Istaknuti rezultati i optimizacija za glasovnu pretragu</h3>
                 <p className="mb-4">
                   Sve više ljudi pretražuje glasovno ("Ok Google, gde da napravim sajt u Beogradu?").
                   Blog vam omogućava da dominriate ove pretrage kroz:
                 </p>
 
                 <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Voice Search Optimization:</h4>
+                  <h4 className="font-semibold mb-2">Optimizacija za glasovnu pretragu:</h4>
                   <ul className="space-y-1 text-sm">
                     <li>• <strong>FAQ format:</strong> "Koliko košta izrada sajta?" umesto "cena web dizajna"</li>
-                    <li>• <strong>Natural language:</strong> Pisanje kao što ljudi govore</li>
-                    <li>• <strong>Local focus:</strong> "Najbolji web dizajner u Novom Sadu"</li>
-                    <li>• <strong>Step-by-step guides:</strong> "Kako da izaberem web dizajnera"</li>
+                    <li>• <strong>Prirodan jezik:</strong> Pisanje kao što ljudi govore</li>
+                    <li>• <strong>Lokalni fokus:</strong> "Najbolji web dizajner u Novom Sadu"</li>
+                    <li>• <strong>Korak-po-korak vodiči:</strong> "Kako da izaberem web dizajnera"</li>
                   </ul>
                 </div>
               </div>
@@ -240,25 +240,25 @@ const BlogArticle10 = () => {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Users className="w-6 h-6 text-primary" />
-                <span>Blog kao Lead Generation Mašina</span>
+                <span>Blog kao mašina za generiranje potencijalnih kupaca</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Content Funnel Strategija</h3>
+                <h3 className="text-xl font-semibold mb-4">Strategija levka sadržaja</h3>
                 <p className="mb-4">
-                  Blog nije samo o traffic-u - cilj je da konvertujete čitaoce u klijente. Ovo se postiže kroz
-                  strategično planiran sadržaj koji vodi ljude kroz customer journey.
+                  Blog nije samo o saobraćaju - cilj je da konvertujete čitaoce u klijente. Ovo se postiže kroz
+                  strategično planiran sadržaj koji vodi ljude kroz putovanje kupca.
                 </p>
 
                 <div className="space-y-4">
                   <Card className="p-4">
                     <h4 className="font-semibold mb-2 text-green-600">Top of Funnel - Awareness</h4>
                     <div className="text-sm space-y-2">
-                      <p><strong>Content type:</strong> Edukativni članci, how-to vodiči, industry insights</p>
+                      <p><strong>Tip sadržaja:</strong> Edukativni članci, praktični vodiči, uvidi iz oblasti</p>
                       <p><strong>Primeri:</strong> "5 trendova u web dizajnu 2024", "Kako da povećate prodaju online"</p>
-                      <p><strong>Cilj:</strong> Privući što više relevatnog traffic-a i etablirati expertise</p>
+                      <p><strong>Cilj:</strong> Privući što više relevantnog saobraćaja i etablirati stručnost</p>
                     </div>
                   </Card>
 

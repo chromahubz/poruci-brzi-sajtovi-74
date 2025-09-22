@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Target, TrendingUp, Users, Globe, CheckCircle, Star, Clock, Eye, BarChart, MousePointer, Zap, Award, Calendar, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Quiz } from "@/components/Quiz";
+import Quiz from "@/components/Quiz";
 
 const BlogArticle11 = () => {
   return (

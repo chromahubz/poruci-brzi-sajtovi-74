@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowLeft, CheckCircle, Star, Smartphone, Tablet, Monitor, TrendingUp, Users, ShoppingCart, AlertTriangle, Target, Search } from "lucide-react";
-import { Quiz } from "@/components/Quiz";
+import Quiz from "@/components/Quiz";
 
 const BlogArticle3 = () => {
   return (
