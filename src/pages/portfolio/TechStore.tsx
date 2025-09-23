@@ -13,11 +13,7 @@ const TechStore = () => {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
-    // Apply font to body for this page
-    document.body.style.fontFamily = '"Inter", sans-serif';
-
     return () => {
-      document.body.style.fontFamily = '';
       document.head.removeChild(link);
     };
   }, []);
@@ -117,7 +113,7 @@ const TechStore = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: '"Inter", sans-serif' }}>
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">

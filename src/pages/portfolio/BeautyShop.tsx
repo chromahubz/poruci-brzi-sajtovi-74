@@ -13,11 +13,7 @@ const BeautyShop = () => {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
-    // Apply font to body for this page
-    document.body.style.fontFamily = '"Poppins", sans-serif';
-
     return () => {
-      document.body.style.fontFamily = '';
       document.head.removeChild(link);
     };
   }, []);
@@ -131,7 +127,7 @@ const BeautyShop = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50" style={{ fontFamily: '"Poppins", sans-serif' }}>
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">

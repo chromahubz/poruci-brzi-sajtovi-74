@@ -13,11 +13,7 @@ const AdvokatskaPetrovic = () => {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
-    // Apply font to body for this page
-    document.body.style.fontFamily = '"Merriweather", "Open Sans", serif';
-
     return () => {
-      document.body.style.fontFamily = '';
       document.head.removeChild(link);
     };
   }, []);
@@ -116,7 +112,7 @@ const AdvokatskaPetrovic = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50" style={{ fontFamily: '"Merriweather", "Open Sans", serif' }}>
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">

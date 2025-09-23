@@ -51,6 +51,7 @@ import TechStore from "./pages/portfolio/TechStore";
 import AdvokatskaPetrovic from "./pages/portfolio/AdvokatskaPetrovic";
 import BeautyShop from "./pages/portfolio/BeautyShop";
 import FitnessPro from "./pages/portfolio/FitnessPro";
+import HealthCareApp from "./pages/portfolio/HealthCareApp";
 
 const queryClient = new QueryClient();
 
@@ -119,6 +120,7 @@ const App = () => (
               <Route path="/portfolio/advokatska-petrovic" element={<AdvokatskaPetrovic />} />
               <Route path="/portfolio/beautyshop" element={<BeautyShop />} />
               <Route path="/portfolio/fitnesspro" element={<FitnessPro />} />
+              <Route path="/portfolio/healthcareapp" element={<HealthCareApp />} />
               <Route path="/kontakt" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

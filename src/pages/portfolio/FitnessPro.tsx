@@ -30,11 +30,7 @@ const FitnessPro = () => {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
-    // Apply font to body for this page
-    document.body.style.fontFamily = '"Roboto", "Roboto Condensed", sans-serif';
-
     return () => {
-      document.body.style.fontFamily = '';
       document.head.removeChild(link);
     };
   }, []);
@@ -159,7 +155,7 @@ const FitnessPro = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50" style={{ fontFamily: '"Roboto", "Roboto Condensed", sans-serif' }}>
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">

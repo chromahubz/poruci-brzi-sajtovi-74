@@ -12,11 +12,7 @@ const RestoranVila = () => {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
-    // Apply font to body for this page
-    document.body.style.fontFamily = '"Playfair Display", "Source Sans Pro", serif';
-
     return () => {
-      document.body.style.fontFamily = '';
       document.head.removeChild(link);
     };
   }, []);
@@ -68,7 +64,7 @@ const RestoranVila = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" style={{ fontFamily: '"Playfair Display", "Source Sans Pro", serif' }}>
       {/* Hero Section */}
       <section className="relative h-[70vh] bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center">
         <div className="absolute inset-0 bg-black/20"></div>

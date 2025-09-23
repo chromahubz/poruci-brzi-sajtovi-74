@@ -162,6 +162,13 @@ const Portfolio = () => {
                           Pogledaj app
                         </Link>
                       </Button>
+                    ) : project.title === "HealthCare App" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/healthcareapp">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj app
+                        </Link>
+                      </Button>
                     ) : (
                       <Button variant="secondary" size="sm">
                         <ExternalLink className="w-4 h-4 mr-2" />
