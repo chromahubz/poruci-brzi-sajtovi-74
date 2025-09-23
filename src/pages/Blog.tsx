@@ -369,6 +369,26 @@ const Blog = () => {
       category: "Email Marketing",
       readTime: "32 min",
       image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 47,
+      title: "TikTok Marketing za srpske biznise: Kompletna strategija za 2025",
+      excerpt: "Kako kreirati viralni TikTok sadržaj koji privlači srpsku publiku, povećava prodaju i gradi brend koji mladi obožavaju. Kompletni vodič sa realnim primerima iz Srbije.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "TikTok Marketing",
+      readTime: "12 min",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 48,
+      title: "AI alati za male biznise 2025: Kako uštedeći 15 sati nedeljno i povećati profit",
+      excerpt: "Kompletni vodič kroz AI alate koji mogu da transformišu vaš mali biznis. Od ChatGPT-a do Canva AI - kako da automatizujete zadatke i oslobodite vreme za važne stvari.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "AI Tools",
+      readTime: "15 min",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     }
   ];
 

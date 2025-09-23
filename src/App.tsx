@@ -62,6 +62,8 @@ import BlogArticle43 from "./pages/blog/BlogArticle43";
 import BlogArticle44 from "./pages/blog/BlogArticle44";
 import BlogArticle45 from "./pages/blog/BlogArticle45";
 import BlogArticle46 from "./pages/blog/BlogArticle46";
+import BlogArticle47 from "./pages/blog/BlogArticle47";
+import BlogArticle48 from "./pages/blog/BlogArticle48";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import WebDesign from "./pages/services/WebDesign";
 import Ecommerce from "./pages/services/Ecommerce";
@@ -164,6 +166,8 @@ const App = () => (
               <Route path="/blog/44" element={<PageTransition><BlogArticle44 /></PageTransition>} />
               <Route path="/blog/45" element={<PageTransition><BlogArticle45 /></PageTransition>} />
               <Route path="/blog/46" element={<PageTransition><BlogArticle46 /></PageTransition>} />
+              <Route path="/blog/47" element={<PageTransition><BlogArticle47 /></PageTransition>} />
+              <Route path="/blog/48" element={<PageTransition><BlogArticle48 /></PageTransition>} />
               <Route path="/portfolio/restoran-vila" element={<PageTransition><RestoranVila /></PageTransition>} />
               <Route path="/portfolio/techstore" element={<PageTransition><TechStore /></PageTransition>} />
               <Route path="/portfolio/advokatska-petrovic" element={<PageTransition><AdvokatskaPetrovic /></PageTransition>} />
