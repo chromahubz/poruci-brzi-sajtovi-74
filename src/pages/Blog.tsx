@@ -197,6 +197,36 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 32,
+      title: "SEO za lokalne biznise u Srbiji: Kompletna strategija za 2025.",
+      excerpt: "Kako da pozicionirate svoj lokalni biznis na vrh Google pretrage i privučete više kupaca iz vaše okoline. Google My Business, citacije, recenzije.",
+      author: "Nikola Jovanović",
+      date: "4. januar 2025",
+      category: "SEO",
+      readTime: "14 min",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 31,
+      title: "UX/UI dizajn za početnike: Kako kreirati intuitivne web interface-e",
+      excerpt: "Kompletni vodič kroz principe dizajna korisničkog iskustva i praktične savete za poboljšanje usability vašeg sajta.",
+      author: "Jelena Marković",
+      date: "6. januar 2025",
+      category: "UX/UI Design",
+      readTime: "9 min",
+      image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 30,
+      title: "AI i automatizacija u digitalnom marketingu: Vodič za 2025.",
+      excerpt: "Kako iskoristiti veštačku inteligenciju i automatizaciju da poboljšate marketing rezultate i smanjite troškove.",
+      author: "Milica Stojanović",
+      date: "8. januar 2025",
+      category: "Digital Marketing",
+      readTime: "12 min",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 27,
       title: "Node.js vs Python: Koji backend jezik izabrati u 2025?",
       excerpt: "Detaljno poređenje dva najpoznatija backend jezika za web development sa praktičnim savetima za izbor prave tehnologije.",
