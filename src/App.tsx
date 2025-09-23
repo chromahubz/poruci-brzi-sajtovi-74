@@ -40,6 +40,9 @@ import BlogArticle23 from "./pages/blog/BlogArticle23";
 import BlogArticle24 from "./pages/blog/BlogArticle24";
 import BlogArticle25 from "./pages/blog/BlogArticle25";
 import BlogArticle26 from "./pages/blog/BlogArticle26";
+import BlogArticle27 from "./pages/blog/BlogArticle27";
+import BlogArticle28 from "./pages/blog/BlogArticle28";
+import BlogArticle29 from "./pages/blog/BlogArticle29";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import WebDesign from "./pages/services/WebDesign";
 import Ecommerce from "./pages/services/Ecommerce";
@@ -115,6 +118,9 @@ const App = () => (
               <Route path="/blog/24" element={<BlogArticle24 />} />
               <Route path="/blog/25" element={<BlogArticle25 />} />
               <Route path="/blog/26" element={<BlogArticle26 />} />
+              <Route path="/blog/27" element={<BlogArticle27 />} />
+              <Route path="/blog/28" element={<BlogArticle28 />} />
+              <Route path="/blog/29" element={<BlogArticle29 />} />
               <Route path="/portfolio/restoran-vila" element={<RestoranVila />} />
               <Route path="/portfolio/techstore" element={<TechStore />} />
               <Route path="/portfolio/advokatska-petrovic" element={<AdvokatskaPetrovic />} />

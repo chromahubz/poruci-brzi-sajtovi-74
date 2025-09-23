@@ -177,6 +177,36 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     },
     {
+      id: 29,
+      title: "Web bezbednost: Kako zaštititi svoj sajt od napada",
+      excerpt: "Praktični vodič za implementaciju osnovnih bezbednosnih mera na vašem web sajtu. SQL injection, XSS, CSRF - naučite kako da se zaštitite.",
+      author: "Stefan Milosavljević",
+      date: "10. januar 2025",
+      category: "Web Security",
+      readTime: "10 min",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 28,
+      title: "Responsive dizajn: Vodič za mobilno prilagođavanje sajta",
+      excerpt: "Sve što trebate da znate o kreiranju sajtova koji savršeno rade na svim uređajima. CSS Grid, Flexbox, Media Queries.",
+      author: "Ana Jovanović",
+      date: "12. januar 2025",
+      category: "Responsive Design",
+      readTime: "6 min",
+      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 27,
+      title: "Node.js vs Python: Koji backend jezik izabrati u 2025?",
+      excerpt: "Detaljno poređenje dva najpoznatija backend jezika za web development sa praktičnim savetima za izbor prave tehnologije.",
+      author: "Marko Petrović",
+      date: "15. januar 2025",
+      category: "Web Development",
+      readTime: "8 min",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
       id: 24,
       title: "Lokalni SEO za Mala Preduzeća - Kompletni Vodič za 2024. Godinu",
       excerpt: "Otkrijte kako da pozicionirate vaše lokalno preduzeće na vrh Google pretrage i privučete više kupaca iz vaše okoline. Google My Business, citacije, recenzije i napredne tehnike.",
