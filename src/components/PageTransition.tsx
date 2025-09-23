@@ -29,8 +29,8 @@ export const PageTransition = ({ children }: PageTransitionProps) => {
 
   const pageTransition = {
     type: "tween",
-    ease: "anticipate",
-    duration: 0.4
+    ease: "easeInOut",
+    duration: 0.08
   };
 
   return (
