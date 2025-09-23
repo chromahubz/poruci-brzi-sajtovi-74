@@ -7,6 +7,10 @@ import LiquidEther from "@/components/LiquidEther";
 import BlurText from "@/components/BlurText";
 import LogoLoop from "@/components/LogoLoop";
 import GradualBlur from "@/components/GradualBlur";
+import { FadeInSection } from "@/components/FadeInSection";
+import { ParallaxSection } from "@/components/ParallaxSection";
+import { HoverCard } from "@/components/HoverCard";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiVercel, SiFigma, SiWordpress } from 'react-icons/si';
 
 const Home = () => {
@@ -115,45 +119,61 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Monitor className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Web sajtovi</CardTitle>
-                <CardDescription>
-                  Moderni, responzivni sajtovi optimizovani za sve uređaje
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <FadeInSection delay={0.1}>
+              <HoverCard hoverScale={1.05}>
+                <Card className="text-center h-full">
+                  <CardHeader>
+                    <Monitor className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>Web sajtovi</CardTitle>
+                    <CardDescription>
+                      Moderni, responzivni sajtovi optimizovani za sve uređaje
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </HoverCard>
+            </FadeInSection>
 
-            <Card className="text-center hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <ShoppingCart className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>E-commerce</CardTitle>
-                <CardDescription>
-                  Online prodavnice sa kompletnim sistemom za prodaju
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <FadeInSection delay={0.2}>
+              <HoverCard hoverScale={1.05}>
+                <Card className="text-center h-full">
+                  <CardHeader>
+                    <ShoppingCart className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>E-commerce</CardTitle>
+                    <CardDescription>
+                      Online prodavnice sa kompletnim sistemom za prodaju
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </HoverCard>
+            </FadeInSection>
 
-            <Card className="text-center hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Smartphone className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Mobilne aplikacije</CardTitle>
-                <CardDescription>
-                  Web aplikacije optimizovane za mobilne uređaje
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <FadeInSection delay={0.3}>
+              <HoverCard hoverScale={1.05}>
+                <Card className="text-center h-full">
+                  <CardHeader>
+                    <Smartphone className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>Mobilne aplikacije</CardTitle>
+                    <CardDescription>
+                      Web aplikacije optimizovane za mobilne uređaje
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </HoverCard>
+            </FadeInSection>
 
-            <Card className="text-center hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Settings className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Održavanje</CardTitle>
-                <CardDescription>
-                  Redovno održavanje i ažuriranje vašeg sajta
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <FadeInSection delay={0.4}>
+              <HoverCard hoverScale={1.05}>
+                <Card className="text-center h-full">
+                  <CardHeader>
+                    <Settings className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>Održavanje</CardTitle>
+                    <CardDescription>
+                      Redovno održavanje i ažuriranje vašeg sajta
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </HoverCard>
+            </FadeInSection>
           </div>
         </div>
       </section>
@@ -191,35 +211,41 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <Zap className="w-8 h-8 text-primary-foreground" />
+            <FadeInSection delay={0.1} direction="up">
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <Zap className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold">Brza isporuka</h3>
+                <p className="text-muted-foreground">
+                  Vaš sajt je spreman za 48 sati. Bez čekanja, bez kašnjenja.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold">Brza isporuka</h3>
-              <p className="text-muted-foreground">
-                Vaš sajt je spreman za 48 sati. Bez čekanja, bez kašnjenja.
-              </p>
-            </div>
+            </FadeInSection>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <DollarSign className="w-8 h-8 text-primary-foreground" />
+            <FadeInSection delay={0.2} direction="up">
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <DollarSign className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold">Pristupačne cene</h3>
+                <p className="text-muted-foreground">
+                  Kvalitetni sajtovi po cenama koje može svako da priušti.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold">Pristupačne cene</h3>
-              <p className="text-muted-foreground">
-                Kvalitetni sajtovi po cenama koje može svako da priušti.
-              </p>
-            </div>
+            </FadeInSection>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <Check className="w-8 h-8 text-primary-foreground" />
+            <FadeInSection delay={0.3} direction="up">
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
+                  <Check className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold">Garancija kvaliteta</h3>
+                <p className="text-muted-foreground">
+                  100% zadovoljstvo ili vraćamo novac. Bez rizika za vas.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold">Garancija kvaliteta</h3>
-              <p className="text-muted-foreground">
-                100% zadovoljstvo ili vraćamo novac. Bez rizika za vas.
-              </p>
-            </div>
+            </FadeInSection>
           </div>
         </div>
       </section>
@@ -252,22 +278,26 @@ const Home = () => {
 
 
         <div className="container mx-auto text-center relative z-20">
-          <div className="space-y-6 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Spremni ste za novi sajt?
-            </h2>
-            <p className="text-lg text-white/90">
-              Kontaktirajte nas danas i dobijte besplatnu konsultaciju. Vaš novi sajt može biti spreman za 48 sati!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">
-                <Link to="/kontakt">Kontaktiraj nas</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 border-white text-white bg-white/10 hover:bg-white/20">
-                <Link to="/cene" className="text-white">Pogledaj cene</Link>
-              </Button>
-            </div>
-          </div>
+          <ParallaxSection speed={0.3}>
+            <FadeInSection delay={0.2}>
+              <div className="space-y-6 max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  Spremni ste za novi sajt?
+                </h2>
+                <p className="text-lg text-white/90">
+                  Kontaktirajte nas danas i dobijte besplatnu konsultaciju. Vaš novi sajt može biti spreman za 48 sati!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">
+                    <Link to="/kontakt">Kontaktiraj nas</Link>
+                  </Button>
+                  <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 border-white text-white bg-white/10 hover:bg-white/20">
+                    <Link to="/cene" className="text-white">Pogledaj cene</Link>
+                  </Button>
+                </div>
+              </div>
+            </FadeInSection>
+          </ParallaxSection>
         </div>
       </section>
 

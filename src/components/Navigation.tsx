@@ -30,7 +30,7 @@ const Navigation = () => {
               alt="Poruci Sajt Logo"
               className="w-8 h-8 rounded-lg"
             />
-            <span className="font-bold text-xl text-gray-900">Poruci Sajt</span>
+            <span className="font-bold text-xl text-gray-900 dark:text-white">Poruci Sajt</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,7 +42,7 @@ const Navigation = () => {
                 className={`font-medium transition-colors hover:text-blue-600 ${
                   isActive(item.href)
                     ? "text-blue-600"
-                    : "text-gray-700"
+                    : "text-gray-700 dark:text-gray-300 dark:hover:text-blue-400"
                 }`}
               >
                 {item.label}
@@ -53,13 +53,15 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center">
+            <button
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} className="text-gray-700 dark:text-gray-300" /> : <Menu size={24} className="text-gray-700 dark:text-gray-300" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { Calendar, User, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 const Blog = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 9;
+
   // SEO-optimized blog articles data
   const articles = [
     {
@@ -325,8 +329,59 @@ const Blog = () => {
       category: "Copywriting",
       readTime: "26 min",
       image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 43,
+      title: "WordPress Optimizacija 2025: Kako ubrzati sajt za 300% i povećati konverzije",
+      excerpt: "Kompletni vodič za WordPress optimizaciju koji može da poveća brzinu vašeg sajta za 300% i konverzije za 40%. Hosting, caching, baza podataka, slike - sve što trebate da znate.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "WordPress",
+      readTime: "25 min",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 44,
+      title: "Google Ads za lokalne biznise u Srbiji: Kompletna strategija za 2025",
+      excerpt: "Kako da pokrenete profitabilne Google Ads kampanje za lokalni biznis u Srbiji. Keyword research, ad copy, landing stranice, tracking - kompletna strategija korak po korak.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "Google Ads",
+      readTime: "30 min",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 45,
+      title: "Social Media Marketing za lokalne biznise: Instagram i Facebook strategija 2025",
+      excerpt: "Kompletna strategija social media marketinga za lokalne biznise. Content plan, engagement, Instagram Stories, Facebook Ads - sve što trebate za uspeh na društvenim mrežama.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "Social Media",
+      readTime: "28 min",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
+    },
+    {
+      id: 46,
+      title: "Email Marketing 2025: Kako izgraditi lojalne klijente i povećati prodaju za 40%",
+      excerpt: "Kako da kreirate email marketing strategiju koja povećava customer lifetime value za 40%. Automatizacija, segmentacija, personalizacija - sve što trebate za uspešan email marketing.",
+      author: "Poruči Sajt Tim",
+      date: "23. septembar 2024",
+      category: "Email Marketing",
+      readTime: "32 min",
+      image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60"
     }
   ];
+
+  // Calculate pagination
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+  const startIndex = (currentPage - 1) * articlesPerPage;
+  const endIndex = startIndex + articlesPerPage;
+  const currentArticles = articles.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen">
@@ -348,7 +403,7 @@ const Blog = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {articles.map((article) => (
+            {currentArticles.map((article) => (
               <Card key={article.id} className="hover:shadow-elegant transition-all duration-300 group cursor-pointer">
                 <Link to={`/blog/${article.id}`} className="block">
                   <div className="aspect-video bg-secondary rounded-t-lg mb-4 overflow-hidden">
@@ -399,6 +454,45 @@ const Blog = () => {
             ))}
           </div>
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-12">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            >
+              <ChevronLeft className="h-4 w-4 mr-1" />
+              Prethodna
+            </button>
+
+            <div className="flex gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 w-10 ${
+                    currentPage === page
+                      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                      : 'border border-input bg-background hover:bg-accent hover:text-accent-foreground'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            >
+              Sledeća
+              <ChevronRight className="h-4 w-4 ml-1" />
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Newsletter CTA */}

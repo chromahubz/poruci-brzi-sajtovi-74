@@ -4,6 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ExternalLink, Monitor, ShoppingCart, Smartphone } from "lucide-react";
 import healthcareImage from "@/assets/healthcare-app-thumbnail.jpg";
+import { FadeInSection } from "@/components/FadeInSection";
+import { HoverCard } from "@/components/HoverCard";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 
 const Portfolio = () => {
   const projects = [
@@ -60,6 +63,60 @@ const Portfolio = () => {
       image: healthcareImage,
       type: "mobile",
       icon: Smartphone
+    },
+    {
+      title: "CryptoTrade Pro",
+      description: "Platforma za trgovanje kriptovalutama sa naprednim alatima",
+      category: "Web sajt",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop",
+      type: "trading",
+      icon: Monitor
+    },
+    {
+      title: "Apex Predators",
+      description: "Gaming clan sajt sa turnirskim statistikama i streamovima",
+      category: "Web sajt",
+      technologies: ["React", "WebSocket", "Node.js"],
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&h=300&fit=crop",
+      type: "gaming",
+      icon: Monitor
+    },
+    {
+      title: "WanderLust Chronicles",
+      description: "Travel blog sa interaktivnim mapama i fotogalerijama",
+      category: "Web sajt",
+      technologies: ["React", "Next.js", "Strapi"],
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=300&fit=crop",
+      type: "blog",
+      icon: Monitor
+    },
+    {
+      title: "Kafeteria Balkan",
+      description: "Autentična balkanska kafeterija sa online rezervacijama",
+      category: "Web sajt",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=300&fit=crop",
+      type: "restaurant",
+      icon: Monitor
+    },
+    {
+      title: "Salon Elegance",
+      description: "Luksuzni frizerski salon sa online rezervacijama i Instagram integracijom",
+      category: "Web sajt",
+      technologies: ["React", "TypeScript", "PWA", "Instagram API"],
+      image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&h=300&fit=crop",
+      type: "beauty",
+      icon: Monitor
+    },
+    {
+      title: "Auto servis Miloš",
+      description: "Digitalizacija porodičnog auto servisa sa sistemom praćenja vozila",
+      category: "Web sajt",
+      technologies: ["React", "TypeScript", "VIN decoder", "SMS API"],
+      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=500&h=300&fit=crop",
+      type: "automotive",
+      icon: Monitor
     }
   ];
 
@@ -85,22 +142,38 @@ const Portfolio = () => {
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">500+</div>
-              <div className="text-muted-foreground">Završenih projekata</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">300+</div>
-              <div className="text-muted-foreground">Zadovoljnih klijenata</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">50+</div>
-              <div className="text-muted-foreground">E-commerce sajtova</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">100+</div>
-              <div className="text-muted-foreground">Mobilnih aplikacija</div>
-            </div>
+            <FadeInSection delay={0.1}>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-primary">
+                  <AnimatedCounter end={500} suffix="+" />
+                </div>
+                <div className="text-muted-foreground">Završenih projekata</div>
+              </div>
+            </FadeInSection>
+            <FadeInSection delay={0.2}>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-primary">
+                  <AnimatedCounter end={300} suffix="+" />
+                </div>
+                <div className="text-muted-foreground">Zadovoljnih klijenata</div>
+              </div>
+            </FadeInSection>
+            <FadeInSection delay={0.3}>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-primary">
+                  <AnimatedCounter end={50} suffix="+" />
+                </div>
+                <div className="text-muted-foreground">E-commerce sajtova</div>
+              </div>
+            </FadeInSection>
+            <FadeInSection delay={0.4}>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-primary">
+                  <AnimatedCounter end={100} suffix="+" />
+                </div>
+                <div className="text-muted-foreground">Mobilnih aplikacija</div>
+              </div>
+            </FadeInSection>
           </div>
         </div>
       </section>
@@ -167,6 +240,48 @@ const Portfolio = () => {
                         <Link to="/portfolio/healthcareapp">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Pogledaj app
+                        </Link>
+                      </Button>
+                    ) : project.title === "CryptoTrade Pro" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/cryptotrading">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "Apex Predators" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/gamingclan">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "WanderLust Chronicles" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/travelblog">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "Kafeteria Balkan" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/kafeteria-balkan">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "Salon Elegance" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/salon-elegance">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
+                        </Link>
+                      </Button>
+                    ) : project.title === "Auto servis Miloš" ? (
+                      <Button variant="secondary" size="sm" asChild>
+                        <Link to="/portfolio/auto-servis-milos">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Pogledaj sajt
                         </Link>
                       </Button>
                     ) : (

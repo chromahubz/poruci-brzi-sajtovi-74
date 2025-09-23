@@ -327,7 +327,7 @@ const BlogArticle31 = () => {
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-2">Rešenja:</p>
                   <ul className="text-sm space-y-1">
-                    <li>• Optimizujte brzinu učitavanja (< 3 sekunde)</li>
+                    <li>• Optimizujte brzinu učitavanja (manje od 3 sekunde)</li>
                     <li>• Povećajte veličinu touch targets (min 44px)</li>
                     <li>• Pojednostavite navigaciju za mobilne uređaje</li>
                   </ul>
