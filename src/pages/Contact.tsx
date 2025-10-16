@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, MapPin, Clock, Send, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -93,34 +93,23 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Telefon</Label>
-                        <Input
-                          id="phone"
-                          placeholder="+381 60 123 4567"
-                          value={formData.phone}
-                          onChange={(e) => handleChange("phone", e.target.value)}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="service">Tip usluge</Label>
-                        <Select value={formData.service} onValueChange={(value) => handleChange("service", value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Odaberite paket" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="osnovni-paket">Osnovni Paket (50€)</SelectItem>
-                            <SelectItem value="mikro-sajtovi">Mikro Sajtovi (200€)</SelectItem>
-                            <SelectItem value="shop-start">Shop Start (150€)</SelectItem>
-                            <SelectItem value="shop-pro">Shop Pro (500€)</SelectItem>
-                            <SelectItem value="auto-blog">Auto Blog (200€)</SelectItem>
-                            <SelectItem value="kompleksniji-sajtovi">Kompleksniji sajtovi po meri</SelectItem>
-                            <SelectItem value="dodatne-usluge">Dodatne usluge</SelectItem>
-                            <SelectItem value="ostalo">Ostalo</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="service">Tip usluge</Label>
+                      <Select value={formData.service} onValueChange={(value) => handleChange("service", value)}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Odaberite paket" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="osnovni-paket">Osnovni Paket (50€)</SelectItem>
+                          <SelectItem value="mikro-sajtovi">Mikro Sajtovi (200€)</SelectItem>
+                          <SelectItem value="shop-start">Shop Start (150€)</SelectItem>
+                          <SelectItem value="shop-pro">Shop Pro (500€)</SelectItem>
+                          <SelectItem value="auto-blog">Auto Blog (200€)</SelectItem>
+                          <SelectItem value="kompleksniji-sajtovi">Kompleksniji sajtovi po meri</SelectItem>
+                          <SelectItem value="dodatne-usluge">Dodatne usluge</SelectItem>
+                          <SelectItem value="ostalo">Ostalo</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div className="space-y-2">
@@ -158,15 +147,22 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-medium">Email</div>
-                      <div className="text-sm text-muted-foreground">kontakt@porucisajt.com</div>
+                      <div className="text-sm text-muted-foreground">contact@unitar.app</div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary" />
+                    <Instagram className="w-5 h-5 text-primary" />
                     <div>
-                      <div className="font-medium">Telefon</div>
-                      <div className="text-sm text-muted-foreground">+381 60 123 4567</div>
+                      <div className="font-medium">Instagram</div>
+                      <a
+                        href="https://instagram.com/porucisajt"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        Pošaljite DM na @porucisajt
+                      </a>
                     </div>
                   </div>
 
@@ -200,8 +196,8 @@ const Contact = () => {
                     Pošaljite nam osnovne informacije o projektu i dobićete orijentacionu cenu u roku od 2 sata.
                   </p>
                   <Button variant="outline" className="w-full">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Pozovite nas
+                    <Mail className="w-4 h-4 mr-2" />
+                    Pošaljite email
                   </Button>
                 </CardContent>
               </Card>
