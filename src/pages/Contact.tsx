@@ -17,21 +17,65 @@ const Contact = () => {
     service: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Poruka poslata!",
-      description: "Kontaktiraćemo vas u najkraćem roku.",
-    });
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Web3Forms API - FREE (250 submissions/month)
+      // Get your access key from: https://web3forms.com
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your key from web3forms.com
+          from_name: formData.name,
+          email: formData.email,
+          subject: `[Poruci Sajt] ${formData.service || 'Novi upit'}`,
+          message: `
+Ime: ${formData.name}
+Email: ${formData.email}
+Usluga: ${formData.service}
+
+Poruka:
+${formData.message}
+          `.trim(),
+          to_email: "contact@unitar.app", // Your email
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Poruka poslata!",
+          description: "Kontaktiraćemo vas u najkraćem roku.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: ""
+        });
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Greška pri slanju",
+        description: "Molimo pokušajte ponovo ili nam pišite direktno na contact@unitar.app",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -124,9 +168,9 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
+                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       <Send className="w-4 h-4 mr-2" />
-                      Pošaljite poruku
+                      {isSubmitting ? "Šalje se..." : "Pošaljite poruku"}
                     </Button>
                   </form>
                 </CardContent>
