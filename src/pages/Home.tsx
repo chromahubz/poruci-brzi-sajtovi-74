@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Check, Clock, DollarSign, Zap, Monitor, Smartphone, ShoppingCart, Settings } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import PromoBanner from "@/components/PromoBanner";
 import LiquidEther from "@/components/LiquidEther";
 import BlurText from "@/components/BlurText";
 import LogoLoop from "@/components/LogoLoop";
@@ -15,14 +15,14 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiVerce
 
 const Home = () => {
   const techLogos = [
-    { node: <SiReact className="text-[#61DAFB]" />, title: "React", href: "https://react.dev" },
-    { node: <SiNextdotjs className="text-black" />, title: "Next.js", href: "https://nextjs.org" },
-    { node: <SiTypescript className="text-[#3178C6]" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-    { node: <SiTailwindcss className="text-[#06B6D4]" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-    { node: <SiNodedotjs className="text-[#339933]" />, title: "Node.js", href: "https://nodejs.org" },
-    { node: <SiVercel className="text-black" />, title: "Vercel", href: "https://vercel.com" },
-    { node: <SiFigma className="text-[#F24E1E]" />, title: "Figma", href: "https://figma.com" },
-    { node: <SiWordpress className="text-[#21759B]" />, title: "WordPress", href: "https://wordpress.org" },
+    { node: <SiReact className="text-[#61DAFB]" />, title: "React" },
+    { node: <SiNextdotjs className="text-black" />, title: "Next.js" },
+    { node: <SiTypescript className="text-[#3178C6]" />, title: "TypeScript" },
+    { node: <SiTailwindcss className="text-[#06B6D4]" />, title: "Tailwind CSS" },
+    { node: <SiNodedotjs className="text-[#339933]" />, title: "Node.js" },
+    { node: <SiVercel className="text-black" />, title: "Vercel" },
+    { node: <SiFigma className="text-[#F24E1E]" />, title: "Figma" },
+    { node: <SiWordpress className="text-[#21759B]" />, title: "WordPress" },
   ];
 
   return (
@@ -96,11 +96,7 @@ const Home = () => {
             </div>
 
             <div className="relative z-20">
-              <img
-                src={heroImage}
-                alt="Profesionalna izrada sajtova"
-                className="rounded-2xl shadow-elegant w-full h-auto"
-              />
+              <PromoBanner />
             </div>
           </div>
         </div>
@@ -240,9 +236,9 @@ const Home = () => {
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
                   <Check className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold">Garancija kvaliteta</h3>
+                <h3 className="text-xl font-semibold">Profesionalna podrška</h3>
                 <p className="text-muted-foreground">
-                  100% zadovoljstvo ili vraćamo novac. Bez rizika za vas.
+                  Besplatno održavanje i tehničku podršku prvih 30 dana.
                 </p>
               </div>
             </FadeInSection>
